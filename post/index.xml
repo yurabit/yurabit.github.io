@@ -22,100 +22,100 @@
     
     <item>
       <title>JVM初探（一）</title>
-      <link>/post/first%E7%9A%84%E5%89%AF%E6%9C%AC/</link>
+      <link>/post/first1/</link>
       <pubDate>Sun, 22 Mar 2020 02:00:06 +0800</pubDate>
       
-      <guid>/post/first%E7%9A%84%E5%89%AF%E6%9C%AC/</guid>
+      <guid>/post/first1/</guid>
       <description>JVM public class Test { public static void main(String[] args) { Solution sl = new Solution(); System.out.println(sl.canMeasureWater(34, 5, 6)); } } </description>
     </item>
     
     <item>
       <title>JVM初探（一）</title>
-      <link>/post/first%E7%9A%84%E5%89%AF%E6%9C%AC10/</link>
+      <link>/post/first10/</link>
       <pubDate>Sun, 22 Mar 2020 02:00:06 +0800</pubDate>
       
-      <guid>/post/first%E7%9A%84%E5%89%AF%E6%9C%AC10/</guid>
+      <guid>/post/first10/</guid>
       <description>JVM public class Test { public static void main(String[] args) { Solution sl = new Solution(); System.out.println(sl.canMeasureWater(34, 5, 6)); } } </description>
     </item>
     
     <item>
       <title>JVM初探（一）</title>
-      <link>/post/first%E7%9A%84%E5%89%AF%E6%9C%AC11/</link>
+      <link>/post/first11/</link>
       <pubDate>Sun, 22 Mar 2020 02:00:06 +0800</pubDate>
       
-      <guid>/post/first%E7%9A%84%E5%89%AF%E6%9C%AC11/</guid>
+      <guid>/post/first11/</guid>
       <description>JVM public class Test { public static void main(String[] args) { Solution sl = new Solution(); System.out.println(sl.canMeasureWater(34, 5, 6)); } } </description>
     </item>
     
     <item>
       <title>JVM初探（一）</title>
-      <link>/post/first%E7%9A%84%E5%89%AF%E6%9C%AC2/</link>
+      <link>/post/first2/</link>
       <pubDate>Sun, 22 Mar 2020 02:00:06 +0800</pubDate>
       
-      <guid>/post/first%E7%9A%84%E5%89%AF%E6%9C%AC2/</guid>
+      <guid>/post/first2/</guid>
       <description>JVM public class Test { public static void main(String[] args) { Solution sl = new Solution(); System.out.println(sl.canMeasureWater(34, 5, 6)); } } </description>
     </item>
     
     <item>
       <title>JVM初探（一）</title>
-      <link>/post/first%E7%9A%84%E5%89%AF%E6%9C%AC3/</link>
+      <link>/post/first3/</link>
       <pubDate>Sun, 22 Mar 2020 02:00:06 +0800</pubDate>
       
-      <guid>/post/first%E7%9A%84%E5%89%AF%E6%9C%AC3/</guid>
+      <guid>/post/first3/</guid>
       <description>JVM public class Test { public static void main(String[] args) { Solution sl = new Solution(); System.out.println(sl.canMeasureWater(34, 5, 6)); } } </description>
     </item>
     
     <item>
       <title>JVM初探（一）</title>
-      <link>/post/first%E7%9A%84%E5%89%AF%E6%9C%AC4/</link>
+      <link>/post/first4/</link>
       <pubDate>Sun, 22 Mar 2020 02:00:06 +0800</pubDate>
       
-      <guid>/post/first%E7%9A%84%E5%89%AF%E6%9C%AC4/</guid>
+      <guid>/post/first4/</guid>
       <description>JVM public class Test { public static void main(String[] args) { Solution sl = new Solution(); System.out.println(sl.canMeasureWater(34, 5, 6)); } } </description>
     </item>
     
     <item>
       <title>JVM初探（一）</title>
-      <link>/post/first%E7%9A%84%E5%89%AF%E6%9C%AC5/</link>
+      <link>/post/first5/</link>
       <pubDate>Sun, 22 Mar 2020 02:00:06 +0800</pubDate>
       
-      <guid>/post/first%E7%9A%84%E5%89%AF%E6%9C%AC5/</guid>
+      <guid>/post/first5/</guid>
       <description>JVM public class Test { public static void main(String[] args) { Solution sl = new Solution(); System.out.println(sl.canMeasureWater(34, 5, 6)); } } </description>
     </item>
     
     <item>
       <title>JVM初探（一）</title>
-      <link>/post/first%E7%9A%84%E5%89%AF%E6%9C%AC6/</link>
+      <link>/post/first6/</link>
       <pubDate>Sun, 22 Mar 2020 02:00:06 +0800</pubDate>
       
-      <guid>/post/first%E7%9A%84%E5%89%AF%E6%9C%AC6/</guid>
+      <guid>/post/first6/</guid>
       <description>JVM public class Test { public static void main(String[] args) { Solution sl = new Solution(); System.out.println(sl.canMeasureWater(34, 5, 6)); } } </description>
     </item>
     
     <item>
       <title>JVM初探（一）</title>
-      <link>/post/first%E7%9A%84%E5%89%AF%E6%9C%AC7/</link>
+      <link>/post/first7/</link>
       <pubDate>Sun, 22 Mar 2020 02:00:06 +0800</pubDate>
       
-      <guid>/post/first%E7%9A%84%E5%89%AF%E6%9C%AC7/</guid>
+      <guid>/post/first7/</guid>
       <description>JVM public class Test { public static void main(String[] args) { Solution sl = new Solution(); System.out.println(sl.canMeasureWater(34, 5, 6)); } } </description>
     </item>
     
     <item>
       <title>JVM初探（一）</title>
-      <link>/post/first%E7%9A%84%E5%89%AF%E6%9C%AC8/</link>
+      <link>/post/first8/</link>
       <pubDate>Sun, 22 Mar 2020 02:00:06 +0800</pubDate>
       
-      <guid>/post/first%E7%9A%84%E5%89%AF%E6%9C%AC8/</guid>
+      <guid>/post/first8/</guid>
       <description>JVM public class Test { public static void main(String[] args) { Solution sl = new Solution(); System.out.println(sl.canMeasureWater(34, 5, 6)); } } </description>
     </item>
     
     <item>
       <title>JVM初探（一）</title>
-      <link>/post/first%E7%9A%84%E5%89%AF%E6%9C%AC9/</link>
+      <link>/post/first9/</link>
       <pubDate>Sun, 22 Mar 2020 02:00:06 +0800</pubDate>
       
-      <guid>/post/first%E7%9A%84%E5%89%AF%E6%9C%AC9/</guid>
+      <guid>/post/first9/</guid>
       <description>JVM public class Test { public static void main(String[] args) { Solution sl = new Solution(); System.out.println(sl.canMeasureWater(34, 5, 6)); } } </description>
     </item>
     
