@@ -8,7 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="description" content="2020年3月26日，我终于迎来了人生中第一次面试，上来就是鹅厂的微信事业群大佬，怀着紧张的心情，翘了正在做的实验，来到了宿舍，调试好电脑，早早的坐在这边等着面试了。让我们一起开始吧……
 刚上来便是一道coding
-大家好"/>
+什么？这么简单的题也想难倒我，我可是刚看了topK问题的，这不就是topK问题的变形吗，看我一通操作，各种优先队列、栈链表全用起来了，好吧，大家看到这里应该已经发现作者的脑子不太好、这个题明明就是个简单的排序啊…不说了，我先去哭一会，折腾了半天，得意洋洋的点了提交，结果突然报错，请用Main类命名、并定义好main方法，记得要循环输入哦！重点来了！考研时候还记得的循环输入，我竟然不知道java里该如何操作！
+javaOJ中各种变量的输入
+ 只有一组数据  Scanner s = new Scanner(System.in); int a = s.nextInt(); int b = s.nextInt(); 输入多组数据，不告知组数，也没有截止符  Scanneer s = new Scanner(System.in); while(s.hasNext) {//判断数据是否结束  int a = s.nextInt(); int b = s.nextInt(); } 输入多组数据，第一行是整数N，表示有N组数据，之后每行表示一组数据  int a; int b; int n; Scanner s = new Scanner(System.in); n = s.nextInt(); for(int. i = 0; i &amp;lt; n; i&#43;&#43;) { a = s.nextInt(); b = s.nextInt(); } 下面贴上我后面自己重新写的代码吧（以后一定多多手敲代码，少用IDE）"/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="/post/tecentinterview/" />
@@ -149,8 +151,131 @@
     <div class="post-content">
       <p>2020年3月26日，我终于迎来了人生中第一次面试，上来就是鹅厂的微信事业群大佬，怀着紧张的心情，翘了正在做的实验，来到了宿舍，调试好电脑，早早的坐在这边等着面试了。让我们一起开始吧……</p>
 <p>刚上来便是一道coding</p>
-<p><!-- raw HTML omitted --></p>
-<p>大家好</p>
+<p><img src="/images/interview/tencentInterview01.png" alt="" title="第一道面试oj"></p>
+<p>什么？这么简单的题也想难倒我，我可是刚看了topK问题的，这不就是topK问题的变形吗，看我一通操作，各种优先队列、栈链表全用起来了，好吧，大家看到这里应该已经发现作者的脑子不太好、这个题明明就是个简单的排序啊…不说了，我先去哭一会，折腾了半天，得意洋洋的点了提交，结果突然报错，请用Main类命名、并定义好main方法，记得要循环输入哦！重点来了！考研时候还记得的循环输入，我竟然不知道java里该如何操作！</p>
+<p><strong>javaOJ中各种变量的输入</strong></p>
+<ol>
+<li>只有一组数据</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Scanner s <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scanner<span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">in</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+</code></pre></div><ol start="2">
+<li>输入多组数据，不告知组数，也没有截止符</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Scanneer s <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scanner<span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">in</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">hasNext</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span><span style="color:#75715e">//判断数据是否结束
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+  <span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><ol start="3">
+<li>输入多组数据，第一行是整数N，表示有N组数据，之后每行表示一组数据</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">int</span> a<span style="color:#f92672">;</span>
+<span style="color:#66d9ef">int</span> b<span style="color:#f92672">;</span>
+<span style="color:#66d9ef">int</span> n<span style="color:#f92672">;</span>
+Scanner s <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scanner<span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">in</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+n <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">.</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> n<span style="color:#f92672">;</span> i<span style="color:#f92672">+</span><span style="color:#f92672">+</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+  a <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+  b <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>下面贴上我后面自己重新写的代码吧（<strong>以后一定多多手敲代码，少用IDE</strong>）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.Scanner<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">public</span> Node node<span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[</span><span style="color:#f92672">]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">int</span> n<span style="color:#f92672">;</span>
+		Main solution <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Main<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+		Scanner sc <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scanner<span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">in</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+		n <span style="color:#f92672">=</span> sc<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">int</span><span style="color:#f92672">[</span><span style="color:#f92672">]</span> arr <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>n<span style="color:#f92672">]</span><span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> n<span style="color:#f92672">;</span> i<span style="color:#f92672">+</span><span style="color:#f92672">+</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			arr<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> sc<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>
+		Node head <span style="color:#f92672">=</span> solution<span style="color:#f92672">.</span><span style="color:#a6e22e">sort</span><span style="color:#f92672">(</span>n<span style="color:#f92672">,</span> arr<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+		head <span style="color:#f92672">=</span> head<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>head<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span> <span style="color:#f92672">!</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">print</span><span style="color:#f92672">(</span>head<span style="color:#f92672">.</span><span style="color:#a6e22e">val</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+			head <span style="color:#f92672">=</span> head<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>
+		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">print</span><span style="color:#f92672">(</span>head<span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+
+	<span style="color:#66d9ef">public</span> Node <span style="color:#a6e22e">sort</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> n<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span><span style="color:#f92672">]</span> arr<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> n <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span> i<span style="color:#f92672">+</span><span style="color:#f92672">+</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> j <span style="color:#f92672">&lt;</span> n <span style="color:#f92672">-</span> i <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span> j<span style="color:#f92672">+</span><span style="color:#f92672">+</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>arr<span style="color:#f92672">[</span>j<span style="color:#f92672">]</span> <span style="color:#f92672">&lt;</span> arr<span style="color:#f92672">[</span>j <span style="color:#f92672">+</span> 1<span style="color:#f92672">]</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+					swap<span style="color:#f92672">(</span>arr<span style="color:#f92672">,</span> j<span style="color:#f92672">,</span> j <span style="color:#f92672">+</span> 1<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+				<span style="color:#f92672">}</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">}</span>
+		Node head <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Node<span style="color:#f92672">(</span>0<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> n<span style="color:#f92672">;</span> i<span style="color:#f92672">+</span><span style="color:#f92672">+</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			Node temp <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Node<span style="color:#f92672">(</span>arr<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+			temp<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> head<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">;</span>
+			head<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> temp<span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>
+		<span style="color:#66d9ef">return</span> head<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+
+	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">swap</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[</span><span style="color:#f92672">]</span> arr<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> a<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> b<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">int</span> temp <span style="color:#f92672">=</span> arr<span style="color:#f92672">[</span>a<span style="color:#f92672">]</span><span style="color:#f92672">;</span>
+		arr<span style="color:#f92672">[</span>a<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> arr<span style="color:#f92672">[</span>b<span style="color:#f92672">]</span><span style="color:#f92672">;</span>
+		arr<span style="color:#f92672">[</span>b<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> temp<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Node</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">int</span> val<span style="color:#f92672">;</span>
+	Node next<span style="color:#f92672">;</span>
+	Node<span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> val<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> val<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>接下来便是一连串的题目轰炸了，真的是一点java也没问</p>
+<ol>
+<li>
+<p>如果要实现一个排行榜，用什么数据结构会好一些？</p>
+</li>
+<li>
+<p>加减乘除该怎么实现</p>
+</li>
+<li>
+<p>栈的特点</p>
+</li>
+<li>
+<p>实现一个消息转发，消息产生者和消息接受者不同步，会用一个什么样的数据结构</p>
+</li>
+<li>
+<p>如何用两个栈实现一个队列(这个就不在重复说了)</p>
+</li>
+<li>
+<p>一个链表用什么办法知道他是不是循环链表（快慢指针）</p>
+</li>
+<li>
+<p>实现两个整数交换，a和b两个数交换；</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">a <span style="color:#f92672">=</span> a<span style="color:#f92672">^</span>b<span style="color:#f92672">;</span>
+b <span style="color:#f92672">=</span> a<span style="color:#f92672">^</span>b<span style="color:#f92672">;</span>
+a <span style="color:#f92672">=</span> a<span style="color:#f92672">^</span>b<span style="color:#f92672">;</span>
+</code></pre></div></li>
+<li>
+<p>线程在操作系统是怎么实现的，怎么调度</p>
+</li>
+<li>
+<p>1-10000之间如何快速算出被2整除的数有多少</p>
+</li>
+<li>
+<p>C语言和C++的区别（为什么问我这个？？？）</p>
+<p>总结成面向对象和面向过程的区别吧</p>
+</li>
+<li>
+<p>C++的多态</p>
+<p><a href="/post/oopvspop/">面向对象与面向过程简述</a></p>
+</li>
+</ol>
+<p>总结下来就是、一塌糊涂，自己面的真的挺糟糕的，希望再多多努力，多手写代码，多做leetcode。加油！！！</p>
 
     </div>
     
@@ -161,6 +286,13 @@
             <hr />
           </div>
           <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/post/oopvspop/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">面向对象与面向过程的理解</span>
+                </a>
+              </span>
             
             
               <span class="button next">
