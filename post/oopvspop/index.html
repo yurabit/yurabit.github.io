@@ -18,7 +18,7 @@
 封装是指将客观事物抽象成类，每个类对自身的数据和方法实行保护。类可以把自己的数据和方法只让可信的类或者对象操作，对不可信的进行信息隐藏。
   继承
 继承是一种连接类的层次模型，并且允许和鼓励类的重用，它提供了一种明确表述共性的方法。对象的一个新类可以由现有的类中派生，这个过程称之为继承。新类继承了原始类或者接口的特性，新类称为原始类的派生类（子类或接口的实现），而原始类称为新类的 基类（父类）。派生类可以从它的基类那里继承方法和实例变量，并且派生类可以修改或新增新的方法使之更适合特殊的需要。
-  "/>
+ 当创建一个子类的对象时，该对象包含了一个基类的子对象。这个子对象与用基类直接创建的对象是一样的。二者的区别在于后者来自于外部，而基类的子对象被包装在子类对象的内部。下面的代码证实了这一点：  class Art { Art() { System.out.println(&amp;#34;我是爷爷类&amp;#34;); } } class Drawing extends Art{ Drawing() { System.out.println(&amp;#34;我是爸爸类&amp;#34;); } } public class Cartoon extends Drawing{ Cartoon() { System.out.println(&amp;#34;我是孙子类&amp;#34;); } public static void main(String[] args) { Cartoon cartoon = new Cartoon(); } } //输出结果 我是爷爷类 //这里调用了爷爷类的构造方法 我是爸爸类 //这里调用了父亲类的构造方法 我是孙子类 //这里调用了子类的构造方法  类的加载  在java中，所谓类的加载是指将类的相关信息加载到内存。在java中，类的加载是动态加载的，当第一次使用这个类的时候才会加载，加载一个类时，会先去判定这个类的父类是否已经加载，如果没有加载，则会先加载其父类。"/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="/post/oopvspop/" />
@@ -186,6 +186,58 @@
 <li>
 <p>继承</p>
 <p>继承是一种连接类的层次模型，并且允许和鼓励类的重用，它提供了一种明确表述共性的方法。对象的一个新类可以由现有的类中派生，这个过程称之为继承。新类继承了原始类或者接口的特性，新类称为原始类的派生类（子类或接口的实现），而原始类称为新类的 基类（父类）。派生类可以从它的基类那里继承方法和实例变量，并且派生类可以修改或新增新的方法使之更适合特殊的需要。</p>
+<ul>
+<li>当创建一个子类的对象时，该对象包含了一个基类的子对象。这个子对象与用基类直接创建的对象是一样的。二者的区别在于后者来自于外部，而基类的子对象被包装在子类对象的内部。下面的代码证实了这一点：</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Art</span> <span style="color:#f92672">{</span>
+    Art<span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;我是爷爷类&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+  
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Drawing</span> <span style="color:#66d9ef">extends</span> Art<span style="color:#f92672">{</span>
+    Drawing<span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;我是爸爸类&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cartoon</span> <span style="color:#66d9ef">extends</span> Drawing<span style="color:#f92672">{</span>
+    Cartoon<span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;我是孙子类&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+  
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[</span><span style="color:#f92672">]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        Cartoon cartoon <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Cartoon<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+  
+<span style="color:#75715e">//输出结果
+</span><span style="color:#75715e"></span>我是爷爷类 <span style="color:#75715e">//这里调用了爷爷类的构造方法
+</span><span style="color:#75715e"></span>我是爸爸类 <span style="color:#75715e">//这里调用了父亲类的构造方法
+</span><span style="color:#75715e"></span>我是孙子类 <span style="color:#75715e">//这里调用了子类的构造方法
+</span></code></pre></div><ul>
+<li>类的加载</li>
+</ul>
+<p>在java中，所谓类的加载是指将类的相关信息加载到内存。在java中，类的加载是动态加载的，当第一次使用这个类的时候才会加载，加载一个类时，会先去判定这个类的父类是否已经加载，如果没有加载，则会先加载其父类。</p>
+<p>一个类的主要信息包括以下几个部分：</p>
+<p><code>类变量（静态变量）</code> <code>类初始化代码</code> <code>类方法（静态方法）</code> <code>实例变量</code> <code>实例初始化代码</code> <code>实例方法 </code> <code>父类信息引用</code></p>
+<p>其中，类初始化代码包括：</p>
+<p><code>定义静态变量时的赋值语句</code> <code>静态初始化代码块</code></p>
+<p>实例初始化代码包括：</p>
+<p><code>定义实例变量时的赋值语句</code> <code>实例初始化代码块 </code> <code>构造方法</code></p>
+<p>类加载过程包括：</p>
+<p><code>分配内存保存类的信息</code>-&gt; <code>给类变量赋默认值</code> -&gt;<code>加载父类</code>-&gt; <code>设置父子关系</code>-&gt;<code>执行类初始化代码</code></p>
+<p>需要说明的是，关于类初始化的代码，是先执行父类的，再执行子类的，不过父类执行时，子类静态变量的值也是有的，是默认值。对于默认值，数值型变量都是0，boolean类型为false，char类型为&rsquo;\u000&rsquo;, 引用型变量为null。</p>
+<p>java运行时数据区分为堆、栈。栈存放函数的局部变量，而堆则是存放动态分配的对象，还有一个内存区域叫做方法区，会存放类的信息。</p>
+<p>加载后，对于每个类，在java方法区中就会有一份这个类的信息。</p>
+<ul>
+<li>创建对象</li>
+</ul>
+<p>在类加载后，new方法就会创建一个实例对象，创建实例对象的过程包括：</p>
+<ol>
+<li>分配内存</li>
+<li>对所有实例变量赋默认值</li>
+<li>执行实例初始化代码</li>
+</ol>
 </li>
 </ul>
 
@@ -198,6 +250,13 @@
             <hr />
           </div>
           <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/post/leetcodejoseph/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">约瑟夫环问题、以及数学解法</span>
+                </a>
+              </span>
             
             
               <span class="button next">

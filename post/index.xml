@@ -6,10 +6,20 @@
     <description>Recent content in Posts on 王源豫个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Mar 2020 10:38:05 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2020 22:42:51 +0800</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>约瑟夫环问题、以及数学解法</title>
+      <link>/post/leetcodejoseph/</link>
+      <pubDate>Mon, 30 Mar 2020 22:42:51 +0800</pubDate>
+      
+      <guid>/post/leetcodejoseph/</guid>
+      <description>题目描述 解题思路  关键思路：留作补充
+  暴力解  public class Solution { public int lastRemaining(int n, int m) { if(n &amp;lt; 1 || m &amp;lt; 1) { return -1; } Node head = new Node(0); Node current = head; for(int i = 1; i &amp;lt; n; i++) { Node temp = new Node(i); temp.prev = current; current.next = temp; current = current.next; } current.next = head; head.prev = current; current = current.</description>
+    </item>
     
     <item>
       <title>面向对象与面向过程的理解</title>
@@ -29,7 +39,7 @@
 封装是指将客观事物抽象成类，每个类对自身的数据和方法实行保护。类可以把自己的数据和方法只让可信的类或者对象操作，对不可信的进行信息隐藏。
   继承
 继承是一种连接类的层次模型，并且允许和鼓励类的重用，它提供了一种明确表述共性的方法。对象的一个新类可以由现有的类中派生，这个过程称之为继承。新类继承了原始类或者接口的特性，新类称为原始类的派生类（子类或接口的实现），而原始类称为新类的 基类（父类）。派生类可以从它的基类那里继承方法和实例变量，并且派生类可以修改或新增新的方法使之更适合特殊的需要。
-  </description>
+ 当创建一个子类的对象时，该对象包含了一个基类的子对象。这个子对象与用基类直接创建的对象是一样的。二者的区别在于后者来自于外部，而基类的子对象被包装在子类对象的内部。下面的代码证实了这一点：  class Art { Art() { System.out.println(&amp;#34;我是爷爷类&amp;#34;); } } class Drawing extends Art{ Drawing() { System.out.println(&amp;#34;我是爸爸类&amp;#34;); } } public class Cartoon extends Drawing{ Cartoon() { System.out.println(&amp;#34;我是孙子类&amp;#34;); } public static void main(String[] args) { Cartoon cartoon = new Cartoon(); } } //输出结果 我是爷爷类 //这里调用了爷爷类的构造方法 我是爸爸类 //这里调用了父亲类的构造方法 我是孙子类 //这里调用了子类的构造方法  类的加载  在java中，所谓类的加载是指将类的相关信息加载到内存。在java中，类的加载是动态加载的，当第一次使用这个类的时候才会加载，加载一个类时，会先去判定这个类的父类是否已经加载，如果没有加载，则会先加载其父类。</description>
     </item>
     
     <item>
