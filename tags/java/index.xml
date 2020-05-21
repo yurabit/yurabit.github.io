@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on 王源豫个人博客</title>
+    <link>/tags/java/</link>
+    <description>Recent content in Java on 王源豫个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Mar 2020 02:00:06 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JVM概述（一）</title>
+      <link>/post/first/</link>
+      <pubDate>Sun, 22 Mar 2020 02:00:06 +0800</pubDate>
+      
+      <guid>/post/first/</guid>
+      <description>JVM JVM(Java Virtual Machine)Java虚拟机是Java实现“一次编写、到处运行”的基本平台。他的总体结构是按照下图所示。
+一个java的程序执行大体流程
+ 通过编译java源文件成字节码文件、或者动态生成的Java字节码文件 将字节码文件（.class文件）通过类加载-&amp;gt;验证-&amp;gt;准备-&amp;gt;解析-&amp;gt;初始化等过程将类以及变量或者方法信息加入到JVM内存中。 运行时数据区分为了5个部分分别存放不同类型的数据 执行引擎通过给定的指令以及分配的处理机按照一定顺序执行程序 将类卸载、程序结束。  </description>
+    </item>
+    
+  </channel>
+</rss>

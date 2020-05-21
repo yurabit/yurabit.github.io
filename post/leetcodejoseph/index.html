@@ -1,36 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en-us"><title>
+    约瑟夫环问题、以及数学解法 | 
     
-      <title>约瑟夫环问题、以及数学解法 :: 王源豫个人博客 — 技术永无止境</title>
-    
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="题目描述 解题思路  关键思路：留作补充
-  暴力解  public class Solution { public int lastRemaining(int n, int m) { if(n &amp;lt; 1 || m &amp;lt; 1) { return -1; } Node head = new Node(0); Node current = head; for(int i = 1; i &amp;lt; n; i&#43;&#43;) { Node temp = new Node(i); temp.prev = current; current.next = temp; current = current.next; } current.next = head; head.prev = current; current = current."/>
-<meta name="keywords" content=""/>
-<meta name="robots" content="noodp"/>
+    王源豫个人博客</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<meta name="description" 
+      content="leetcode打卡
+                ">
+
 <link rel="canonical" href="/post/leetcodejoseph/" />
 
+<link rel="icon" type="image/png" href="/image/favicon.ico">
 
-
-
-
-<link rel="stylesheet" href="/assets/style.css">
-
-
-<link rel="stylesheet" href="/style.css">
-
-
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="/img/favicon.ico">
-
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="约瑟夫环问题、以及数学解法"/>
-<meta name="twitter:description" content="leetcode打卡"/>
-
-
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/bulma.min.css">
 
 <meta property="og:title" content="约瑟夫环问题、以及数学解法" />
 <meta property="og:description" content="leetcode打卡" />
@@ -39,116 +25,92 @@
 <meta property="article:published_time" content="2020-03-30T22:42:51+08:00" />
 <meta property="article:modified_time" content="2020-03-30T22:42:51+08:00" /><meta property="og:site_name" content="王源豫个人博客" />
 
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="约瑟夫环问题、以及数学解法"/>
+<meta name="twitter:description" content="leetcode打卡"/>
 
 
 
-
-
-  </head>
-  <body class="dark-theme">
-    <div class="container">
-      <header class="header">
-  <span class="header__inner">
-    <a href="/" class="logo" style="text-decoration: none;">
-  
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
-</svg>
-</span>
-    <span class="logo__text">cd /myblog</span>
-    <span class="logo__cursor"></span>
-  
-</a>
-
-    <span class="header__right">
-      
-        <nav class="menu">
-  <ul class="menu__inner menu__inner--desktop">
     
-      
-        
-          <li><a href="/about">AboutMe</a></li>
-        
-      
-        
-          <li><a href="/post">文章</a></li>
-        
-      
-        
-          <li><a href="/catalogue">目录</a></li>
-        
-      
-      
-    
-  </ul>
-
-  <ul class="menu__inner menu__inner--mobile">
-    
-      
-        <li><a href="/about">AboutMe</a></li>
-      
-    
-      
-        <li><a href="/post">文章</a></li>
-      
-    
-      
-        <li><a href="/catalogue">目录</a></li>
-      
-    
-  </ul>
-</nav>
-
-        <span class="menu-trigger">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-          </svg>
-        </span>
-      
-      <span class="theme-toggle">
-        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
-  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
-</svg>
-
-      </span>
-    </span>
-  </span>
-</header>
 
 
-      <div class="content">
-        
-  
-  
+<script src=/js/ramium.js></script>
+<link rel="stylesheet" href=/css/ramium.css>
 
-  <div class="post">
-    <h2 class="post-title"><a href="/post/leetcodejoseph/">约瑟夫环问题、以及数学解法</a></h2>
-    <div class="post-meta">
-      
-        <span class="post-date">
-          2020-03-30
-        </span>
 
-        
-          
-        
-      
 
-      <span class="post-author">— Written by wyy</span>
+
+
+<body><nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href=/>
       
-        <span class="post-read-time">— 1 min read</span>
+      <strong>王源豫个人博客 </strong>
+      
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+      data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      
+      
+      <a class="navbar-item" href="/about">AboutMe</a>
+      
+      
+      
+      <a class="navbar-item" href="/post">文章</a>
+      
+      
+      
+      <a class="navbar-item" href="/catalogue">目录</a>
+      
       
     </div>
 
-    
+    <div class="navbar-end">
+      
 
-    
+      
+    </div>
+  </div>
+</nav><div class="columns is-centered">
+        <div id="page-body" class="column is-7">
 
-    <div class="post-content">
-      <h3 id="题目描述">题目描述</h3>
+<div class="content blog">
+    <h1 class="title">约瑟夫环问题、以及数学解法</h1>
+
+    <div id="infobar" class="level is-mobile">
+        <div class="level-left">
+            
+
+            <div class="level-item">
+                <p class="subtitle info">
+                    1 min read
+                </p>
+            </div>
+        </div>
+        <div class="level-right is-hidden-touch">
+            <div class="tags">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="tags is-hidden-desktop">
+        
+    </div>
+
+    <div class="blog-text">
+        
+
+        <h3 id="题目描述">题目描述</h3>
 <p><img src="/images/leetcode/JoSeph.png" alt="JoSeph"></p>
 <h3 id="解题思路">解题思路</h3>
 <blockquote>
@@ -218,70 +180,89 @@
 <span style="color:#f92672">}</span>
 </code></pre></div>
     </div>
-    
-      
-        <div class="pagination">
-          <div class="pagination__title">
-            <span class="pagination__title-h">Others</span>
-            <hr />
-          </div>
-          <div class="pagination__buttons">
-            
-            
-              <span class="button next">
-                <a href="/post/oopvspop/">
-                  <span class="button__text">面向对象与面向过程的理解</span>
-                  <span class="button__icon">→</span>
-                </a>
-              </span>
-            
-          </div>
-        </div>
-      
-    
+</div><div id="social-media-share" class="has-text-centered">
+	<p><i>Sharing is caring!</i></p>
+	<br>
+	
+	<div class="share-buttons">
+	    <a  href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2fleetcodejoseph%2f"
+	        onclick="socialMediaPopUp(this.href, '', 500, 500); return false;"
+	        title="Share on Facebook. Opens in a new window.">
+	        <img src=/img/icons/45px/facebook.png>
+	    </a>
+
+	    <a  href="https://twitter.com/intent/tweet?text=%e7%ba%a6%e7%91%9f%e5%a4%ab%e7%8e%af%e9%97%ae%e9%a2%98%e3%80%81%e4%bb%a5%e5%8f%8a%e6%95%b0%e5%ad%a6%e8%a7%a3%e6%b3%95&url=%2fpost%2fleetcodejoseph%2f"
+	        onclick="socialMediaPopUp(this.href, '', 500, 500); return false;"
+	        title="Share on Twitter. Opens in a new window." >
+	        <img src=/img/icons/45px/twitter.png>
+	    </a>
+
+		<a  href="http://www.reddit.com/submit?url=%2fpost%2fleetcodejoseph%2f"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Reddit. Opens in a new window." >
+	        <img src=/img/icons/45px/reddit.png>
+	    </a>
+
+	    <a  href="http://pinterest.com/pin/create/button/?url=%2fpost%2fleetcodejoseph%2f"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Pinterest. Opens in a new window." >
+	        <img src=/img/icons/45px/pinterest.png>
+	    </a>
+
+	    <a  href="http://www.tumblr.com/share/link?url=%2fpost%2fleetcodejoseph%2f"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Tumblr. Opens in a new window." >
+	        <img src=/img/icons/45px/tumblr.png>
+	    </a>
+
+		<a  href="https://www.linkedin.com/shareArticle?mini=true&url=%2fpost%2fleetcodejoseph%2f
+			&title=%e7%ba%a6%e7%91%9f%e5%a4%ab%e7%8e%af%e9%97%ae%e9%a2%98%e3%80%81%e4%bb%a5%e5%8f%8a%e6%95%b0%e5%ad%a6%e8%a7%a3%e6%b3%95&summary=%e9%a2%98%e7%9b%ae%e6%8f%8f%e8%bf%b0%20%e8%a7%a3%e9%a2%98%e6%80%9d%e8%b7%af%20%20%e5%85%b3%e9%94%ae%e6%80%9d%e8%b7%af%ef%bc%9a%e7%95%99%e4%bd%9c%e8%a1%a5%e5%85%85%0a%20%20%e6%9a%b4%e5%8a%9b%e8%a7%a3%20%20public%20class%20Solution%20%7b%20public%20int%20lastRemaining%28int%20n%2c%20int%20m%29%20%7b%20if%28n%20%26lt%3b%201%20%7c%7c%20m%20%26lt%3b%201%29%20%7b%20return%20-1%3b%20%7d%20Node%20head%20%3d%20new%20Node%280%29%3b%20Node%20current%20%3d%20head%3b%20for%28int%20i%20%3d%201%3b%20i%20%26lt%3b%20n%3b%20i%2b%2b%29%20%7b%20Node%20temp%20%3d%20new%20Node%28i%29%3b%20temp.prev%20%3d%20current%3b%20current.next%20%3d%20temp%3b%20current%20%3d%20current.next%3b%20%7d%20current.next%20%3d%20head%3b%20head.prev%20%3d%20current%3b%20current%20%3d%20current.&source=rafed123.github.io"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on LinkedIn. Opens in a new window." >
+	        <img src=/img/icons/45px/linkedin.png>
+	    </a>
+
+	    <a  href="mailto:?subject=%e7%ba%a6%e7%91%9f%e5%a4%ab%e7%8e%af%e9%97%ae%e9%a2%98%e3%80%81%e4%bb%a5%e5%8f%8a%e6%95%b0%e5%ad%a6%e8%a7%a3%e6%b3%95&amp;body=Check out this site %2fpost%2fleetcodejoseph%2f"
+	        title="Share via Email. Opens in a new window." >
+	        <img src=/img/icons/45px/mail.png>
+	    </a>
+	</div>
+</div>
 
 
-    
-      
+<br>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    (function () {
         
+        
+        if (window.location.hostname == "localhost")
+            return;
 
-      
-    
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = '';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
+
+        </div>
     </div>
 
-      </div>
-
-      
-        <footer class="footer">
-  <div class="footer__inner">
-    
-      <a href="/" class="logo" style="text-decoration: none;">
-  
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
-</svg>
-</span>
-    <span class="logo__text">cd /myblog</span>
-    <span class="logo__cursor"></span>
-  
-</a>
-
-      <div class="copyright">
-        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
-        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
-      </div>
-    
-  </div>
+<footer class="footer has-background-dark">
+    <div class="content has-text-centered has-text-white">
+        <p>
+            © 2020 Ramium. Powered by
+            <a class="has-text-light" href="https://github.com/gohugoio/hugo" target="_blank">
+            Hugo</a>. Theme
+            <a class="has-text-light" href="https://github.com/rafed123/ramium/" target="_blank">
+                Ramium.
+            </a>
+        </p>
+    </div>
 </footer>
+</body>
 
-<script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
-
-
-      
-    </div>
-
-    
-  </body>
 </html>

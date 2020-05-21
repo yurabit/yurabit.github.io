@@ -1,39 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en-us"><title>
+    暑期实习腾讯微信事业群面试 | 
     
-      <title>暑期实习腾讯微信事业群面试 :: 王源豫个人博客 — 技术永无止境</title>
-    
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="2020年3月26日，我终于迎来了人生中第一次面试，上来就是鹅厂的微信事业群大佬，怀着紧张的心情，翘了正在做的实验，来到了宿舍，调试好电脑，早早的坐在这边等着面试了。让我们一起开始吧……
-刚上来便是一道coding
-什么？这么简单的题也想难倒我，我可是刚看了topK问题的，这不就是topK问题的变形吗，看我一通操作，各种优先队列、栈链表全用起来了，好吧，大家看到这里应该已经发现作者的脑子不太好、这个题明明就是个简单的排序啊…不说了，我先去哭一会，折腾了半天，得意洋洋的点了提交，结果突然报错，请用Main类命名、并定义好main方法，记得要循环输入哦！重点来了！考研时候还记得的循环输入，我竟然不知道java里该如何操作！
-javaOJ中各种变量的输入
- 只有一组数据  Scanner s = new Scanner(System.in); int a = s.nextInt(); int b = s.nextInt(); 输入多组数据，不告知组数，也没有截止符  Scanneer s = new Scanner(System.in); while(s.hasNext) {//判断数据是否结束  int a = s.nextInt(); int b = s.nextInt(); } 输入多组数据，第一行是整数N，表示有N组数据，之后每行表示一组数据  int a; int b; int n; Scanner s = new Scanner(System.in); n = s.nextInt(); for(int. i = 0; i &amp;lt; n; i&#43;&#43;) { a = s.nextInt(); b = s.nextInt(); } 下面贴上我后面自己重新写的代码吧（以后一定多多手敲代码，少用IDE）"/>
-<meta name="keywords" content=""/>
-<meta name="robots" content="noodp"/>
+    王源豫个人博客</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<meta name="description" 
+      content="第一次面试、由于紧张和准备不充分等原因、被虐的体无完肤、继续加油吧
+                ">
+
 <link rel="canonical" href="/post/tecentinterview/" />
 
+<link rel="icon" type="image/png" href="/image/favicon.ico">
 
-
-
-
-<link rel="stylesheet" href="/assets/style.css">
-
-
-<link rel="stylesheet" href="/style.css">
-
-
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="/img/favicon.ico">
-
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="暑期实习腾讯微信事业群面试"/>
-<meta name="twitter:description" content="第一次面试、由于紧张和准备不充分等原因、被虐的体无完肤、继续加油吧"/>
-
-
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/bulma.min.css">
 
 <meta property="og:title" content="暑期实习腾讯微信事业群面试" />
 <meta property="og:description" content="第一次面试、由于紧张和准备不充分等原因、被虐的体无完肤、继续加油吧" />
@@ -42,116 +25,92 @@ javaOJ中各种变量的输入
 <meta property="article:published_time" content="2020-03-26T20:58:35+08:00" />
 <meta property="article:modified_time" content="2020-03-26T20:58:35+08:00" /><meta property="og:site_name" content="王源豫个人博客" />
 
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="暑期实习腾讯微信事业群面试"/>
+<meta name="twitter:description" content="第一次面试、由于紧张和准备不充分等原因、被虐的体无完肤、继续加油吧"/>
 
 
 
-
-
-  </head>
-  <body class="dark-theme">
-    <div class="container">
-      <header class="header">
-  <span class="header__inner">
-    <a href="/" class="logo" style="text-decoration: none;">
-  
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
-</svg>
-</span>
-    <span class="logo__text">cd /myblog</span>
-    <span class="logo__cursor"></span>
-  
-</a>
-
-    <span class="header__right">
-      
-        <nav class="menu">
-  <ul class="menu__inner menu__inner--desktop">
     
-      
-        
-          <li><a href="/about">AboutMe</a></li>
-        
-      
-        
-          <li><a href="/post">文章</a></li>
-        
-      
-        
-          <li><a href="/catalogue">目录</a></li>
-        
-      
-      
-    
-  </ul>
-
-  <ul class="menu__inner menu__inner--mobile">
-    
-      
-        <li><a href="/about">AboutMe</a></li>
-      
-    
-      
-        <li><a href="/post">文章</a></li>
-      
-    
-      
-        <li><a href="/catalogue">目录</a></li>
-      
-    
-  </ul>
-</nav>
-
-        <span class="menu-trigger">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-          </svg>
-        </span>
-      
-      <span class="theme-toggle">
-        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
-  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
-</svg>
-
-      </span>
-    </span>
-  </span>
-</header>
 
 
-      <div class="content">
-        
-  
-  
+<script src=/js/ramium.js></script>
+<link rel="stylesheet" href=/css/ramium.css>
 
-  <div class="post">
-    <h2 class="post-title"><a href="/post/tecentinterview/">暑期实习腾讯微信事业群面试</a></h2>
-    <div class="post-meta">
-      
-        <span class="post-date">
-          2020-03-26
-        </span>
 
-        
-          
-        
-      
 
-      <span class="post-author">— Written by wyy</span>
+
+
+<body><nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href=/>
       
-        <span class="post-read-time">— 2 min read</span>
+      <strong>王源豫个人博客 </strong>
+      
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+      data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      
+      
+      <a class="navbar-item" href="/about">AboutMe</a>
+      
+      
+      
+      <a class="navbar-item" href="/post">文章</a>
+      
+      
+      
+      <a class="navbar-item" href="/catalogue">目录</a>
+      
       
     </div>
 
-    
+    <div class="navbar-end">
+      
 
-    
+      
+    </div>
+  </div>
+</nav><div class="columns is-centered">
+        <div id="page-body" class="column is-7">
 
-    <div class="post-content">
-      <p>2020年3月26日，我终于迎来了人生中第一次面试，上来就是鹅厂的微信事业群大佬，怀着紧张的心情，翘了正在做的实验，来到了宿舍，调试好电脑，早早的坐在这边等着面试了。让我们一起开始吧……</p>
+<div class="content blog">
+    <h1 class="title">暑期实习腾讯微信事业群面试</h1>
+
+    <div id="infobar" class="level is-mobile">
+        <div class="level-left">
+            
+
+            <div class="level-item">
+                <p class="subtitle info">
+                    6 mins read
+                </p>
+            </div>
+        </div>
+        <div class="level-right is-hidden-touch">
+            <div class="tags">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="tags is-hidden-desktop">
+        
+    </div>
+
+    <div class="blog-text">
+        
+
+        <p>2020年3月26日，我终于迎来了人生中第一次面试，上来就是鹅厂的微信事业群大佬，怀着紧张的心情，翘了正在做的实验，来到了宿舍，调试好电脑，早早的坐在这边等着面试了。让我们一起开始吧……</p>
 <p>刚上来便是一道coding</p>
 <p><img src="/images/interview/tencentInterview01.png" alt="" title="第一道面试oj"></p>
 <p>什么？这么简单的题也想难倒我，我可是刚看了topK问题的，这不就是topK问题的变形吗，看我一通操作，各种优先队列、栈链表全用起来了，好吧，大家看到这里应该已经发现作者的脑子不太好、这个题明明就是个简单的排序啊…不说了，我先去哭一会，折腾了半天，得意洋洋的点了提交，结果突然报错，请用Main类命名、并定义好main方法，记得要循环输入哦！重点来了！考研时候还记得的循环输入，我竟然不知道java里该如何操作！</p>
@@ -280,77 +239,89 @@ a <span style="color:#f92672">=</span> a<span style="color:#f92672">^</span>b<sp
 <p>总结下来就是、一塌糊涂，自己面的真的挺糟糕的，希望再多多努力，多手写代码，多做leetcode。加油！！！</p>
 
     </div>
-    
-      
-        <div class="pagination">
-          <div class="pagination__title">
-            <span class="pagination__title-h">Others</span>
-            <hr />
-          </div>
-          <div class="pagination__buttons">
-            
-              <span class="button previous">
-                <a href="/post/oopvspop/">
-                  <span class="button__icon">←</span>
-                  <span class="button__text">面向对象与面向过程的理解</span>
-                </a>
-              </span>
-            
-            
-              <span class="button next">
-                <a href="/post/first/">
-                  <span class="button__text">JVM概述（一）</span>
-                  <span class="button__icon">→</span>
-                </a>
-              </span>
-            
-          </div>
-        </div>
-      
-    
+</div><div id="social-media-share" class="has-text-centered">
+	<p><i>Sharing is caring!</i></p>
+	<br>
+	
+	<div class="share-buttons">
+	    <a  href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2ftecentinterview%2f"
+	        onclick="socialMediaPopUp(this.href, '', 500, 500); return false;"
+	        title="Share on Facebook. Opens in a new window.">
+	        <img src=/img/icons/45px/facebook.png>
+	    </a>
+
+	    <a  href="https://twitter.com/intent/tweet?text=%e6%9a%91%e6%9c%9f%e5%ae%9e%e4%b9%a0%e8%85%be%e8%ae%af%e5%be%ae%e4%bf%a1%e4%ba%8b%e4%b8%9a%e7%be%a4%e9%9d%a2%e8%af%95&url=%2fpost%2ftecentinterview%2f"
+	        onclick="socialMediaPopUp(this.href, '', 500, 500); return false;"
+	        title="Share on Twitter. Opens in a new window." >
+	        <img src=/img/icons/45px/twitter.png>
+	    </a>
+
+		<a  href="http://www.reddit.com/submit?url=%2fpost%2ftecentinterview%2f"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Reddit. Opens in a new window." >
+	        <img src=/img/icons/45px/reddit.png>
+	    </a>
+
+	    <a  href="http://pinterest.com/pin/create/button/?url=%2fpost%2ftecentinterview%2f"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Pinterest. Opens in a new window." >
+	        <img src=/img/icons/45px/pinterest.png>
+	    </a>
+
+	    <a  href="http://www.tumblr.com/share/link?url=%2fpost%2ftecentinterview%2f"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Tumblr. Opens in a new window." >
+	        <img src=/img/icons/45px/tumblr.png>
+	    </a>
+
+		<a  href="https://www.linkedin.com/shareArticle?mini=true&url=%2fpost%2ftecentinterview%2f
+			&title=%e6%9a%91%e6%9c%9f%e5%ae%9e%e4%b9%a0%e8%85%be%e8%ae%af%e5%be%ae%e4%bf%a1%e4%ba%8b%e4%b8%9a%e7%be%a4%e9%9d%a2%e8%af%95&summary=2020%e5%b9%b43%e6%9c%8826%e6%97%a5%ef%bc%8c%e6%88%91%e7%bb%88%e4%ba%8e%e8%bf%8e%e6%9d%a5%e4%ba%86%e4%ba%ba%e7%94%9f%e4%b8%ad%e7%ac%ac%e4%b8%80%e6%ac%a1%e9%9d%a2%e8%af%95%ef%bc%8c%e4%b8%8a%e6%9d%a5%e5%b0%b1%e6%98%af%e9%b9%85%e5%8e%82%e7%9a%84%e5%be%ae%e4%bf%a1%e4%ba%8b%e4%b8%9a%e7%be%a4%e5%a4%a7%e4%bd%ac%ef%bc%8c%e6%80%80%e7%9d%80%e7%b4%a7%e5%bc%a0%e7%9a%84%e5%bf%83%e6%83%85%ef%bc%8c%e7%bf%98%e4%ba%86%e6%ad%a3%e5%9c%a8%e5%81%9a%e7%9a%84%e5%ae%9e%e9%aa%8c%ef%bc%8c%e6%9d%a5%e5%88%b0%e4%ba%86%e5%ae%bf%e8%88%8d%ef%bc%8c%e8%b0%83%e8%af%95%e5%a5%bd%e7%94%b5%e8%84%91%ef%bc%8c%e6%97%a9%e6%97%a9%e7%9a%84%e5%9d%90%e5%9c%a8%e8%bf%99%e8%be%b9%e7%ad%89%e7%9d%80%e9%9d%a2%e8%af%95%e4%ba%86%e3%80%82%e8%ae%a9%e6%88%91%e4%bb%ac%e4%b8%80%e8%b5%b7%e5%bc%80%e5%a7%8b%e5%90%a7%e2%80%a6%e2%80%a6%0a%e5%88%9a%e4%b8%8a%e6%9d%a5%e4%be%bf%e6%98%af%e4%b8%80%e9%81%93coding%0a%e4%bb%80%e4%b9%88%ef%bc%9f%e8%bf%99%e4%b9%88%e7%ae%80%e5%8d%95%e7%9a%84%e9%a2%98%e4%b9%9f%e6%83%b3%e9%9a%be%e5%80%92%e6%88%91%ef%bc%8c%e6%88%91%e5%8f%af%e6%98%af%e5%88%9a%e7%9c%8b%e4%ba%86topK%e9%97%ae%e9%a2%98%e7%9a%84%ef%bc%8c%e8%bf%99%e4%b8%8d%e5%b0%b1%e6%98%aftopK%e9%97%ae%e9%a2%98%e7%9a%84%e5%8f%98%e5%bd%a2%e5%90%97%ef%bc%8c%e7%9c%8b%e6%88%91%e4%b8%80%e9%80%9a%e6%93%8d%e4%bd%9c%ef%bc%8c%e5%90%84%e7%a7%8d%e4%bc%98%e5%85%88%e9%98%9f%e5%88%97%e3%80%81%e6%a0%88%e9%93%be%e8%a1%a8%e5%85%a8%e7%94%a8%e8%b5%b7%e6%9d%a5%e4%ba%86%ef%bc%8c%e5%a5%bd%e5%90%a7%ef%bc%8c%e5%a4%a7%e5%ae%b6%e7%9c%8b%e5%88%b0%e8%bf%99%e9%87%8c%e5%ba%94%e8%af%a5%e5%b7%b2%e7%bb%8f%e5%8f%91%e7%8e%b0%e4%bd%9c%e8%80%85%e7%9a%84%e8%84%91%e5%ad%90%e4%b8%8d%e5%a4%aa%e5%a5%bd%e3%80%81%e8%bf%99%e4%b8%aa%e9%a2%98%e6%98%8e%e6%98%8e%e5%b0%b1%e6%98%af%e4%b8%aa%e7%ae%80%e5%8d%95%e7%9a%84%e6%8e%92%e5%ba%8f%e5%95%8a%e2%80%a6%e4%b8%8d%e8%af%b4%e4%ba%86%ef%bc%8c%e6%88%91%e5%85%88%e5%8e%bb%e5%93%ad%e4%b8%80%e4%bc%9a%ef%bc%8c%e6%8a%98%e8%85%be%e4%ba%86%e5%8d%8a%e5%a4%a9%ef%bc%8c%e5%be%97%e6%84%8f%e6%b4%8b%e6%b4%8b%e7%9a%84%e7%82%b9%e4%ba%86%e6%8f%90%e4%ba%a4%ef%bc%8c%e7%bb%93%e6%9e%9c%e7%aa%81%e7%84%b6%e6%8a%a5%e9%94%99%ef%bc%8c%e8%af%b7%e7%94%a8Main%e7%b1%bb%e5%91%bd%e5%90%8d%e3%80%81%e5%b9%b6%e5%ae%9a%e4%b9%89%e5%a5%bdmain%e6%96%b9%e6%b3%95%ef%bc%8c%e8%ae%b0%e5%be%97%e8%a6%81%e5%be%aa%e7%8e%af%e8%be%93%e5%85%a5%e5%93%a6%ef%bc%81%e9%87%8d%e7%82%b9%e6%9d%a5%e4%ba%86%ef%bc%81%e8%80%83%e7%a0%94%e6%97%b6%e5%80%99%e8%bf%98%e8%ae%b0%e5%be%97%e7%9a%84%e5%be%aa%e7%8e%af%e8%be%93%e5%85%a5%ef%bc%8c%e6%88%91%e7%ab%9f%e7%84%b6%e4%b8%8d%e7%9f%a5%e9%81%93java%e9%87%8c%e8%af%a5%e5%a6%82%e4%bd%95%e6%93%8d%e4%bd%9c%ef%bc%81%0ajavaOJ%e4%b8%ad%e5%90%84%e7%a7%8d%e5%8f%98%e9%87%8f%e7%9a%84%e8%be%93%e5%85%a5%0a%20%e5%8f%aa%e6%9c%89%e4%b8%80%e7%bb%84%e6%95%b0%e6%8d%ae%20%20Scanner%20s%20%3d%20new%20Scanner%28System.in%29%3b%20int%20a%20%3d%20s.nextInt%28%29%3b%20int%20b%20%3d%20s.nextInt%28%29%3b%20%e8%be%93%e5%85%a5%e5%a4%9a%e7%bb%84%e6%95%b0%e6%8d%ae%ef%bc%8c%e4%b8%8d%e5%91%8a%e7%9f%a5%e7%bb%84%e6%95%b0%ef%bc%8c%e4%b9%9f%e6%b2%a1%e6%9c%89%e6%88%aa%e6%ad%a2%e7%ac%a6%20%20Scanneer%20s%20%3d%20new%20Scanner%28System.in%29%3b%20while%28s.hasNext%29%20%7b%2f%2f%e5%88%a4%e6%96%ad%e6%95%b0%e6%8d%ae%e6%98%af%e5%90%a6%e7%bb%93%e6%9d%9f%20%20int%20a%20%3d%20s.nextInt%28%29%3b%20int%20b%20%3d%20s.nextInt%28%29%3b%20%7d%20%e8%be%93%e5%85%a5%e5%a4%9a%e7%bb%84%e6%95%b0%e6%8d%ae%ef%bc%8c%e7%ac%ac%e4%b8%80%e8%a1%8c%e6%98%af%e6%95%b4%e6%95%b0N%ef%bc%8c%e8%a1%a8%e7%a4%ba%e6%9c%89N%e7%bb%84%e6%95%b0%e6%8d%ae%ef%bc%8c%e4%b9%8b%e5%90%8e%e6%af%8f%e8%a1%8c%e8%a1%a8%e7%a4%ba%e4%b8%80%e7%bb%84%e6%95%b0%e6%8d%ae%20%20int%20a%3b%20int%20b%3b%20int%20n%3b%20Scanner%20s%20%3d%20new%20Scanner%28System.in%29%3b%20n%20%3d%20s.nextInt%28%29%3b%20for%28int.%20i%20%3d%200%3b%20i%20%26lt%3b%20n%3b%20i%2b%2b%29%20%7b%20a%20%3d%20s.nextInt%28%29%3b%20b%20%3d%20s.nextInt%28%29%3b%20%7d%20%e4%b8%8b%e9%9d%a2%e8%b4%b4%e4%b8%8a%e6%88%91%e5%90%8e%e9%9d%a2%e8%87%aa%e5%b7%b1%e9%87%8d%e6%96%b0%e5%86%99%e7%9a%84%e4%bb%a3%e7%a0%81%e5%90%a7%ef%bc%88%e4%bb%a5%e5%90%8e%e4%b8%80%e5%ae%9a%e5%a4%9a%e5%a4%9a%e6%89%8b%e6%95%b2%e4%bb%a3%e7%a0%81%ef%bc%8c%e5%b0%91%e7%94%a8IDE%ef%bc%89&source=rafed123.github.io"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on LinkedIn. Opens in a new window." >
+	        <img src=/img/icons/45px/linkedin.png>
+	    </a>
+
+	    <a  href="mailto:?subject=%e6%9a%91%e6%9c%9f%e5%ae%9e%e4%b9%a0%e8%85%be%e8%ae%af%e5%be%ae%e4%bf%a1%e4%ba%8b%e4%b8%9a%e7%be%a4%e9%9d%a2%e8%af%95&amp;body=Check out this site %2fpost%2ftecentinterview%2f"
+	        title="Share via Email. Opens in a new window." >
+	        <img src=/img/icons/45px/mail.png>
+	    </a>
+	</div>
+</div>
 
 
-    
-      
+<br>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    (function () {
         
+        
+        if (window.location.hostname == "localhost")
+            return;
 
-      
-    
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = '';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
+
+        </div>
     </div>
 
-      </div>
-
-      
-        <footer class="footer">
-  <div class="footer__inner">
-    
-      <a href="/" class="logo" style="text-decoration: none;">
-  
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
-</svg>
-</span>
-    <span class="logo__text">cd /myblog</span>
-    <span class="logo__cursor"></span>
-  
-</a>
-
-      <div class="copyright">
-        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
-        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
-      </div>
-    
-  </div>
+<footer class="footer has-background-dark">
+    <div class="content has-text-centered has-text-white">
+        <p>
+            © 2020 Ramium. Powered by
+            <a class="has-text-light" href="https://github.com/gohugoio/hugo" target="_blank">
+            Hugo</a>. Theme
+            <a class="has-text-light" href="https://github.com/rafed123/ramium/" target="_blank">
+                Ramium.
+            </a>
+        </p>
+    </div>
 </footer>
+</body>
 
-<script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
-
-
-      
-    </div>
-
-    
-  </body>
 </html>
