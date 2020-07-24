@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>protobuf on 王源豫个人博客</title>
+    <link>/tags/protobuf/</link>
+    <description>Recent content in protobuf on 王源豫个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Jun 2020 22:52:20 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/protobuf/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Protobuf2语言指南（翻译）</title>
+      <link>/post/protobuf2languageguide/</link>
+      <pubDate>Wed, 17 Jun 2020 22:52:20 +0800</pubDate>
+      
+      <guid>/post/protobuf2languageguide/</guid>
+      <description>注：内容翻译自官方文档，仅作个人学习使用。原文
+ 语言指南   定义一个消息类型
+  Scalar值类型
+  可选值与默认值
+  枚举
+  使用其他消息类型
+  嵌套类型
+  更新消息类型
+  扩展
+  Oneof
+  Maps
+  包
+  定义服务
+  选项
+  生成类
+ 这个指南为我们描述了利用Protocal Buffer语言来结构化Protocal Buffer数据的方法，包括了.proto文件的语法和怎样从.proto文件中生成数据访问类。其包含了proto2版本的内容：如果想了解有关与proto3的语法，请参看Proto3 Language Guide。
+   定义一个消息类型(Defining a message type)  首先，让我们来看一个非常简单的例子。我们说当你想要定义一个Search Request的消息格式，其中每一个Search Request都有一个字符串类型的Query，一个你感兴趣内容的特定页码，还有每一页需要多少结果。下面的.proto文件就是来定义上述的消息类型。
+ message SearchRequest {	required string query = 1;	optional int32 page_number = 2;	optional int32 result_per_page = 3;} 消息类型的SearchRequest中定义了上述所要求的三个字段（名称/值 的对），每一份数据都会在字段中有相应的数据，每一个字段都有一个名称和一个类型。</description>
+    </item>
+    
+  </channel>
+</rss>

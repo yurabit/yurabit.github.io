@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en-us"><title>
+    Redis基础 | 
+    
+    王源豫个人博客</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<meta name="description" 
+      content="Redis 基础  Redis是由意大利人Salvatore Sanfilippo（网名Antirez）开发。名字是由&quot;Remote Dictionary Service&rdquo;（远程字典服务）。
+ 安装Redis  Docker  # 拉取Redis镜像 &gt; docker pull redis # 运行Redis容器 &gt; docker run --name myredis -d -p 6379:6379 redis # 执行容器中的 redis-cli, 可以直接使用命令行操作redis &gt; docker exec -it myredis redis-cli  MacOS  &gt; brew install redis  Ubuntu  &gt; apt-get install redis  RedHat  &gt; yum install redis 基本数据结构  Redis中最基本的数据结构有5种，分别是string、list、hash、set、zset。
+其中所有的结构都是Key-Value的形式存在的，以上的五种数据结构指的都是Value的值。其中Key均为字符串类型。
+   string
+字符串的具体结构留到以后来分析，其主要的操作如下
+# 键值对操作 &gt; set name bb OK &gt; get name &#34;bb&#34; &gt; exists name (integer) 1 &gt; del name (integer) 1 &gt; get name (nil) # 批量键值对操作 &gt; mset name1 bb name2 yy OK &gt; mget name1 name2 1) &#34;bb&#34; 2) &#34;yy&#34; &gt; mget name1 name2 name3 1) &#34;bb&#34; 2) &#34;yy&#34; 3) (nil) # 处理过期、以及set命令的扩展 &gt; set name bb OK &gt; expire name 5 (integer) 1 .
+                ">
+
+<link rel="canonical" href="/post/redis/" />
+
+<link rel="icon" type="image/png" href="/image/favicon.ico">
+
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/bulma.min.css">
+
+<meta property="og:title" content="Redis基础" />
+<meta property="og:description" content="Redis 基础  Redis是由意大利人Salvatore Sanfilippo（网名Antirez）开发。名字是由&quot;Remote Dictionary Service&rdquo;（远程字典服务）。
+ 安装Redis  Docker  # 拉取Redis镜像 &gt; docker pull redis # 运行Redis容器 &gt; docker run --name myredis -d -p 6379:6379 redis # 执行容器中的 redis-cli, 可以直接使用命令行操作redis &gt; docker exec -it myredis redis-cli  MacOS  &gt; brew install redis  Ubuntu  &gt; apt-get install redis  RedHat  &gt; yum install redis 基本数据结构  Redis中最基本的数据结构有5种，分别是string、list、hash、set、zset。
+其中所有的结构都是Key-Value的形式存在的，以上的五种数据结构指的都是Value的值。其中Key均为字符串类型。
+   string
+字符串的具体结构留到以后来分析，其主要的操作如下
+# 键值对操作 &gt; set name bb OK &gt; get name &#34;bb&#34; &gt; exists name (integer) 1 &gt; del name (integer) 1 &gt; get name (nil) # 批量键值对操作 &gt; mset name1 bb name2 yy OK &gt; mget name1 name2 1) &#34;bb&#34; 2) &#34;yy&#34; &gt; mget name1 name2 name3 1) &#34;bb&#34; 2) &#34;yy&#34; 3) (nil) # 处理过期、以及set命令的扩展 &gt; set name bb OK &gt; expire name 5 (integer) 1 ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/redis/" />
+<meta property="article:published_time" content="2020-07-01T09:13:44+08:00" />
+<meta property="article:modified_time" content="2020-07-01T09:13:44+08:00" /><meta property="og:site_name" content="王源豫个人博客" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Redis基础"/>
+<meta name="twitter:description" content="Redis 基础  Redis是由意大利人Salvatore Sanfilippo（网名Antirez）开发。名字是由&quot;Remote Dictionary Service&rdquo;（远程字典服务）。
+ 安装Redis  Docker  # 拉取Redis镜像 &gt; docker pull redis # 运行Redis容器 &gt; docker run --name myredis -d -p 6379:6379 redis # 执行容器中的 redis-cli, 可以直接使用命令行操作redis &gt; docker exec -it myredis redis-cli  MacOS  &gt; brew install redis  Ubuntu  &gt; apt-get install redis  RedHat  &gt; yum install redis 基本数据结构  Redis中最基本的数据结构有5种，分别是string、list、hash、set、zset。
+其中所有的结构都是Key-Value的形式存在的，以上的五种数据结构指的都是Value的值。其中Key均为字符串类型。
+   string
+字符串的具体结构留到以后来分析，其主要的操作如下
+# 键值对操作 &gt; set name bb OK &gt; get name &#34;bb&#34; &gt; exists name (integer) 1 &gt; del name (integer) 1 &gt; get name (nil) # 批量键值对操作 &gt; mset name1 bb name2 yy OK &gt; mget name1 name2 1) &#34;bb&#34; 2) &#34;yy&#34; &gt; mget name1 name2 name3 1) &#34;bb&#34; 2) &#34;yy&#34; 3) (nil) # 处理过期、以及set命令的扩展 &gt; set name bb OK &gt; expire name 5 (integer) 1 ."/>
+
+
+
+    
+
+
+<script src=/js/ramium.js></script>
+<link rel="stylesheet" href=/css/ramium.css>
+
+
+
+
+
+<body><nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href=/>
+      
+      <strong>王源豫个人博客 </strong>
+      
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+      data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      
+      
+      <a class="navbar-item" href="/about">AboutMe</a>
+      
+      
+      
+      <a class="navbar-item" href="/post">文章</a>
+      
+      
+      
+      <a class="navbar-item" href="/catalogue">目录</a>
+      
+      
+    </div>
+
+    <div class="navbar-end">
+      
+
+      
+    </div>
+  </div>
+</nav><div class="columns is-centered">
+        <div id="page-body" class="column is-7">
+
+<div class="content blog">
+    <h1 class="title">Redis基础</h1>
+
+    <div id="infobar" class="level is-mobile">
+        <div class="level-left">
+            
+
+            <div class="level-item">
+                <p class="subtitle info">
+                    5 mins read
+                </p>
+            </div>
+        </div>
+        <div class="level-right is-hidden-touch">
+            <div class="tags">
+                
+                <a class="tag is-dark is-rounded" href="/tags/redis">Redis</a>
+                
+                <a class="tag is-dark is-rounded" href="/tags/database">Database</a>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="tags is-hidden-desktop">
+        
+        <a class="tag is-dark is-rounded" href="/tags/redis">Redis</a>
+        
+        <a class="tag is-dark is-rounded" href="/tags/database">Database</a>
+        
+    </div>
+
+    <div class="blog-text">
+        
+
+        <h3 id="redis-基础">Redis 基础</h3>
+<blockquote>
+<p>Redis是由意大利人Salvatore Sanfilippo（网名Antirez）开发。名字是由&quot;Remote Dictionary Service&rdquo;（远程字典服务）。</p>
+</blockquote>
+<h4 id="安装redis">安装Redis</h4>
+<ul>
+<li>Docker</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 拉取Redis镜像</span>
+&gt; docker pull redis
+<span style="color:#75715e"># 运行Redis容器</span>
+&gt; docker run --name myredis -d -p 6379:6379 redis
+<span style="color:#75715e"># 执行容器中的 redis-cli, 可以直接使用命令行操作redis</span>
+&gt; docker exec -it myredis redis-cli
+</code></pre></div><ul>
+<li>MacOS</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&gt; brew install redis
+</code></pre></div><ul>
+<li>Ubuntu</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&gt; apt-get install redis
+</code></pre></div><ul>
+<li>RedHat</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&gt; yum install redis
+</code></pre></div><h4 id="基本数据结构">基本数据结构</h4>
+<blockquote>
+<p>Redis中最基本的数据结构有5种，分别是string、list、hash、set、zset。</p>
+<p>其中所有的结构都是Key-Value的形式存在的，以上的五种数据结构指的都是Value的值。其中Key均为字符串类型。</p>
+</blockquote>
+<ol>
+<li>
+<p>string</p>
+<p>字符串的具体结构留到以后来分析，其主要的操作如下</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 键值对操作</span>
+&gt; set name bb
+OK
+&gt; get name
+<span style="color:#e6db74">&#34;bb&#34;</span>
+&gt; exists name
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">1</span>
+&gt; del name
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">1</span>
+&gt; get name
+<span style="color:#f92672">(</span>nil<span style="color:#f92672">)</span>
+   
+<span style="color:#75715e"># 批量键值对操作</span>
+&gt; mset name1 bb name2 yy
+OK
+&gt; mget name1 name2
+1<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;bb&#34;</span>
+2<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;yy&#34;</span>
+&gt; mget name1 name2 name3
+1<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;bb&#34;</span>
+2<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;yy&#34;</span>
+3<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>nil<span style="color:#f92672">)</span>
+   
+<span style="color:#75715e"># 处理过期、以及set命令的扩展</span>
+&gt; set name bb
+OK
+&gt; expire name <span style="color:#ae81ff">5</span>
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">1</span>
+...                 <span style="color:#75715e"># 等候5s</span>
+&gt; get name
+<span style="color:#f92672">(</span>nil<span style="color:#f92672">)</span>
+&gt; setex name <span style="color:#ae81ff">5</span> bb   <span style="color:#75715e"># 等价于set expire</span>
+OK
+&gt; setnx girl bb
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">1</span>
+&gt; setnx girl <span style="color:#ae81ff">2</span>
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">0</span>
+   
+<span style="color:#75715e"># 如果value是整数</span>
+&gt; set name <span style="color:#ae81ff">1</span>
+OK
+&gt; incr name
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">2</span>
+&gt; incrby name <span style="color:#ae81ff">5</span>
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">7</span>
+</code></pre></div></li>
+<li>
+<p>list</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 左右进出</span>
+&gt; rpush list hhh    <span style="color:#75715e"># lpush类似</span>
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">1</span>
+&gt; lpop list					<span style="color:#75715e"># rpop类似</span>
+<span style="color:#e6db74">&#34;hhh&#34;</span>
+&gt; llen list
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">0</span>
+   
+<span style="color:#75715e"># 慢操作</span>
+<span style="color:#75715e"># 由于redis中的list为quicklist+ziplist结构，所以查询相关操作很慢</span>
+&gt; lpush books java python golang
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">3</span>
+&gt; lindex books <span style="color:#ae81ff">2</span>
+<span style="color:#e6db74">&#34;java&#34;</span>
+&gt; lrange books <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">1</span>
+1<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;golang&#34;</span>
+2<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;python&#34;</span>
+&gt; ltrim books <span style="color:#ae81ff">1</span> -1
+OK
+&gt; lrange books <span style="color:#ae81ff">0</span> -1
+1<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;python&#34;</span>
+2<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;java&#34;</span>
+</code></pre></div></li>
+<li>
+<p>hash</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&gt; hset books java <span style="color:#e6db74">&#34;think in java&#34;</span>
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">1</span>
+&gt; hget books java
+<span style="color:#e6db74">&#34;think in java&#34;</span>
+&gt; hgetall books
+1<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;java&#34;</span>
+2<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;think in java&#34;</span>
+&gt; hlen books
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">1</span>
+&gt; hset books java <span style="color:#e6db74">&#34;hhhh&#34;</span>
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">0</span>             <span style="color:#75715e"># 因为是更新操作所以返回0</span>
+&gt; hmset books java <span style="color:#e6db74">&#34;hhh&#34;</span> golang <span style="color:#e6db74">&#34;hhhhhh&#34;</span>
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">2</span>
+&gt; hmget books java golang
+1<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;hhh&#34;</span>
+2<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;hhhhhh&#34;</span>
+&gt; hset user age <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">1</span>
+&gt; hincrby user age <span style="color:#ae81ff">5</span>
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">6</span>
+</code></pre></div></li>
+<li>
+<p>set</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&gt; sadd books python
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">1</span>
+&gt; sadd books python
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">0</span>
+&gt; smembers books
+1<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;python&#34;</span>
+&gt; sismember books python
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">1</span>
+&gt; sismember books java
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">0</span>
+&gt; scard books
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">1</span>
+&gt; spop books
+<span style="color:#e6db74">&#34;python&#34;</span>
+</code></pre></div></li>
+<li>
+<p>zset</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&gt; zadd books 8.9 <span style="color:#e6db74">&#34;effective go&#34;</span>
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">1</span>
+&gt; zadd books 3.5 <span style="color:#e6db74">&#34;thinking in java&#34;</span>
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">1</span>
+&gt; zadd books <span style="color:#ae81ff">7</span> <span style="color:#e6db74">&#34;linux&#34;</span>
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">1</span>
+&gt; zrange books <span style="color:#ae81ff">0</span> -1
+1<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;thinking in java&#34;</span>
+2<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;linux&#34;</span>
+3<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;effective go&#34;</span>
+&gt; zrevrange books <span style="color:#ae81ff">0</span> -1
+1<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;effective go&#34;</span>
+2<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;linux&#34;</span>
+3<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;thinking in java&#34;</span>
+&gt; zcard books.             <span style="color:#75715e"># 相当于count()</span>
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">3</span>
+&gt; zscore books <span style="color:#e6db74">&#34;effective go&#34;</span>
+<span style="color:#e6db74">&#34;8.9000000000000004&#34;</span>       <span style="color:#75715e"># 内部score使用double类型存储，会存在精度问题</span>
+&gt; zrank books <span style="color:#e6db74">&#34;effective go&#34;</span>
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">1</span>
+&gt; zrangebyscore books <span style="color:#ae81ff">0</span> 7.5
+1<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;thinking in java&#34;</span>
+2<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;linux&#34;</span>
+&gt; zrangebyscore books -inf 7.5 withscores
+1<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;thinking in java&#34;</span>
+2<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;3.5&#34;</span>
+3<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;linux&#34;</span>
+4<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;7&#34;</span>
+&gt; zrem books <span style="color:#e6db74">&#34;thinking in java&#34;</span>
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">1</span>
+</code></pre></div></li>
+</ol>
+<blockquote>
+<p>除了srting外，其余四种结构都为容器结构：</p>
+<p>容器类结构服从以下两个规则：</p>
+<ul>
+<li>Create if not exists</li>
+<li>Drop if no elements</li>
+</ul>
+</blockquote>
+<h4 id="过期时间">过期时间</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&gt; setex name <span style="color:#ae81ff">10</span> bb
+OK
+&gt; ttl name
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> <span style="color:#ae81ff">6</span>
+&gt; set name bb
+OK
+&gt; ttl name
+<span style="color:#f92672">(</span>integer<span style="color:#f92672">)</span> -1
+</code></pre></div>
+    </div>
+</div><div id="social-media-share" class="has-text-centered">
+	<p><i>Sharing is caring!</i></p>
+	<br>
+	
+	<div class="share-buttons">
+	    <a  href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2fredis%2f"
+	        onclick="socialMediaPopUp(this.href, '', 500, 500); return false;"
+	        title="Share on Facebook. Opens in a new window.">
+	        <img src=/img/icons/45px/facebook.png>
+	    </a>
+
+	    <a  href="https://twitter.com/intent/tweet?text=Redis%e5%9f%ba%e7%a1%80&url=%2fpost%2fredis%2f"
+	        onclick="socialMediaPopUp(this.href, '', 500, 500); return false;"
+	        title="Share on Twitter. Opens in a new window." >
+	        <img src=/img/icons/45px/twitter.png>
+	    </a>
+
+		<a  href="http://www.reddit.com/submit?url=%2fpost%2fredis%2f"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Reddit. Opens in a new window." >
+	        <img src=/img/icons/45px/reddit.png>
+	    </a>
+
+	    <a  href="http://pinterest.com/pin/create/button/?url=%2fpost%2fredis%2f"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Pinterest. Opens in a new window." >
+	        <img src=/img/icons/45px/pinterest.png>
+	    </a>
+
+	    <a  href="http://www.tumblr.com/share/link?url=%2fpost%2fredis%2f"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Tumblr. Opens in a new window." >
+	        <img src=/img/icons/45px/tumblr.png>
+	    </a>
+
+		<a  href="https://www.linkedin.com/shareArticle?mini=true&url=%2fpost%2fredis%2f
+			&title=Redis%e5%9f%ba%e7%a1%80&summary=Redis%20%e5%9f%ba%e7%a1%80%20%20Redis%e6%98%af%e7%94%b1%e6%84%8f%e5%a4%a7%e5%88%a9%e4%ba%baSalvatore%20Sanfilippo%ef%bc%88%e7%bd%91%e5%90%8dAntirez%ef%bc%89%e5%bc%80%e5%8f%91%e3%80%82%e5%90%8d%e5%ad%97%e6%98%af%e7%94%b1%26quot%3bRemote%20Dictionary%20Service%26rdquo%3b%ef%bc%88%e8%bf%9c%e7%a8%8b%e5%ad%97%e5%85%b8%e6%9c%8d%e5%8a%a1%ef%bc%89%e3%80%82%0a%20%e5%ae%89%e8%a3%85Redis%20%20Docker%20%20%23%20%e6%8b%89%e5%8f%96Redis%e9%95%9c%e5%83%8f%20%26gt%3b%20docker%20pull%20redis%20%23%20%e8%bf%90%e8%a1%8cRedis%e5%ae%b9%e5%99%a8%20%26gt%3b%20docker%20run%20--name%20myredis%20-d%20-p%206379%3a6379%20redis%20%23%20%e6%89%a7%e8%a1%8c%e5%ae%b9%e5%99%a8%e4%b8%ad%e7%9a%84%20redis-cli%2c%20%e5%8f%af%e4%bb%a5%e7%9b%b4%e6%8e%a5%e4%bd%bf%e7%94%a8%e5%91%bd%e4%bb%a4%e8%a1%8c%e6%93%8d%e4%bd%9credis%20%26gt%3b%20docker%20exec%20-it%20myredis%20redis-cli%20%20MacOS%20%20%26gt%3b%20brew%20install%20redis%20%20Ubuntu%20%20%26gt%3b%20apt-get%20install%20redis%20%20RedHat%20%20%26gt%3b%20yum%20install%20redis%20%e5%9f%ba%e6%9c%ac%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%20%20Redis%e4%b8%ad%e6%9c%80%e5%9f%ba%e6%9c%ac%e7%9a%84%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e6%9c%895%e7%a7%8d%ef%bc%8c%e5%88%86%e5%88%ab%e6%98%afstring%e3%80%81list%e3%80%81hash%e3%80%81set%e3%80%81zset%e3%80%82%0a%e5%85%b6%e4%b8%ad%e6%89%80%e6%9c%89%e7%9a%84%e7%bb%93%e6%9e%84%e9%83%bd%e6%98%afKey-Value%e7%9a%84%e5%bd%a2%e5%bc%8f%e5%ad%98%e5%9c%a8%e7%9a%84%ef%bc%8c%e4%bb%a5%e4%b8%8a%e7%9a%84%e4%ba%94%e7%a7%8d%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e6%8c%87%e7%9a%84%e9%83%bd%e6%98%afValue%e7%9a%84%e5%80%bc%e3%80%82%e5%85%b6%e4%b8%adKey%e5%9d%87%e4%b8%ba%e5%ad%97%e7%ac%a6%e4%b8%b2%e7%b1%bb%e5%9e%8b%e3%80%82%0a%20%20%20string%0a%e5%ad%97%e7%ac%a6%e4%b8%b2%e7%9a%84%e5%85%b7%e4%bd%93%e7%bb%93%e6%9e%84%e7%95%99%e5%88%b0%e4%bb%a5%e5%90%8e%e6%9d%a5%e5%88%86%e6%9e%90%ef%bc%8c%e5%85%b6%e4%b8%bb%e8%a6%81%e7%9a%84%e6%93%8d%e4%bd%9c%e5%a6%82%e4%b8%8b%0a%23%20%e9%94%ae%e5%80%bc%e5%af%b9%e6%93%8d%e4%bd%9c%20%26gt%3b%20set%20name%20bb%20OK%20%26gt%3b%20get%20name%20%26%2334%3bbb%26%2334%3b%20%26gt%3b%20exists%20name%20%28integer%29%201%20%26gt%3b%20del%20name%20%28integer%29%201%20%26gt%3b%20get%20name%20%28nil%29%20%23%20%e6%89%b9%e9%87%8f%e9%94%ae%e5%80%bc%e5%af%b9%e6%93%8d%e4%bd%9c%20%26gt%3b%20mset%20name1%20bb%20name2%20yy%20OK%20%26gt%3b%20mget%20name1%20name2%201%29%20%26%2334%3bbb%26%2334%3b%202%29%20%26%2334%3byy%26%2334%3b%20%26gt%3b%20mget%20name1%20name2%20name3%201%29%20%26%2334%3bbb%26%2334%3b%202%29%20%26%2334%3byy%26%2334%3b%203%29%20%28nil%29%20%23%20%e5%a4%84%e7%90%86%e8%bf%87%e6%9c%9f%e3%80%81%e4%bb%a5%e5%8f%8aset%e5%91%bd%e4%bb%a4%e7%9a%84%e6%89%a9%e5%b1%95%20%26gt%3b%20set%20name%20bb%20OK%20%26gt%3b%20expire%20name%205%20%28integer%29%201%20.&source=rafed123.github.io"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on LinkedIn. Opens in a new window." >
+	        <img src=/img/icons/45px/linkedin.png>
+	    </a>
+
+	    <a  href="mailto:?subject=Redis%e5%9f%ba%e7%a1%80&amp;body=Check out this site %2fpost%2fredis%2f"
+	        title="Share via Email. Opens in a new window." >
+	        <img src=/img/icons/45px/mail.png>
+	    </a>
+	</div>
+</div>
+
+
+<br>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    (function () {
+        
+        
+        if (window.location.hostname == "localhost")
+            return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = '';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+        </div>
+    </div>
+
+<footer class="footer has-background-dark">
+    <div class="content has-text-centered has-text-white">
+        <p>
+            © 2020 Ramium. Powered by
+            <a class="has-text-light" href="https://github.com/gohugoio/hugo" target="_blank">
+            Hugo</a>. Theme
+            <a class="has-text-light" href="https://github.com/rafed123/ramium/" target="_blank">
+                Ramium.
+            </a>
+        </p>
+    </div>
+</footer>
+</body>
+
+</html>

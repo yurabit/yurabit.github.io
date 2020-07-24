@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-us"><title>
+    SpringMVC | 
+    
+    王源豫个人博客</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<meta name="description" 
+      content="00.Servlet  普通的Java程序很难完成网络聊天、发帖、交互这样的功能，Sun公司提供了Servlet这种技术供我们使用。
+ JavaWeb目录结构 
+                ">
+
+<link rel="canonical" href="/post/springmvc/" />
+
+<link rel="icon" type="image/png" href="/image/favicon.ico">
+
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/bulma.min.css">
+
+<meta property="og:title" content="SpringMVC" />
+<meta property="og:description" content="00.Servlet  普通的Java程序很难完成网络聊天、发帖、交互这样的功能，Sun公司提供了Servlet这种技术供我们使用。
+ JavaWeb目录结构 " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/springmvc/" />
+<meta property="article:published_time" content="2020-07-19T16:40:51+08:00" />
+<meta property="article:modified_time" content="2020-07-19T16:40:51+08:00" /><meta property="og:site_name" content="王源豫个人博客" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SpringMVC"/>
+<meta name="twitter:description" content="00.Servlet  普通的Java程序很难完成网络聊天、发帖、交互这样的功能，Sun公司提供了Servlet这种技术供我们使用。
+ JavaWeb目录结构 "/>
+
+
+
+    
+
+
+<script src=/js/ramium.js></script>
+<link rel="stylesheet" href=/css/ramium.css>
+
+
+
+
+
+<body><nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href=/>
+      
+      <strong>王源豫个人博客 </strong>
+      
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+      data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      
+      
+      <a class="navbar-item" href="/about">AboutMe</a>
+      
+      
+      
+      <a class="navbar-item" href="/post">文章</a>
+      
+      
+      
+      <a class="navbar-item" href="/catalogue">目录</a>
+      
+      
+    </div>
+
+    <div class="navbar-end">
+      
+
+      
+    </div>
+  </div>
+</nav><div class="columns is-centered">
+        <div id="page-body" class="column is-7">
+
+<div class="content blog">
+    <h1 class="title">SpringMVC</h1>
+
+    <div id="infobar" class="level is-mobile">
+        <div class="level-left">
+            
+
+            <div class="level-item">
+                <p class="subtitle info">
+                    1 min read
+                </p>
+            </div>
+        </div>
+        <div class="level-right is-hidden-touch">
+            <div class="tags">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="tags is-hidden-desktop">
+        
+    </div>
+
+    <div class="blog-text">
+        
+
+        <h3 id="00servlet">00.Servlet</h3>
+<blockquote>
+<p>普通的Java程序很难完成网络聊天、发帖、交互这样的功能，Sun公司提供了Servlet这种技术供我们使用。</p>
+</blockquote>
+<h4 id="javaweb目录结构">JavaWeb目录结构</h4>
+
+    </div>
+</div><div id="social-media-share" class="has-text-centered">
+	<p><i>Sharing is caring!</i></p>
+	<br>
+	
+	<div class="share-buttons">
+	    <a  href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2fspringmvc%2f"
+	        onclick="socialMediaPopUp(this.href, '', 500, 500); return false;"
+	        title="Share on Facebook. Opens in a new window.">
+	        <img src=/img/icons/45px/facebook.png>
+	    </a>
+
+	    <a  href="https://twitter.com/intent/tweet?text=SpringMVC&url=%2fpost%2fspringmvc%2f"
+	        onclick="socialMediaPopUp(this.href, '', 500, 500); return false;"
+	        title="Share on Twitter. Opens in a new window." >
+	        <img src=/img/icons/45px/twitter.png>
+	    </a>
+
+		<a  href="http://www.reddit.com/submit?url=%2fpost%2fspringmvc%2f"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Reddit. Opens in a new window." >
+	        <img src=/img/icons/45px/reddit.png>
+	    </a>
+
+	    <a  href="http://pinterest.com/pin/create/button/?url=%2fpost%2fspringmvc%2f"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Pinterest. Opens in a new window." >
+	        <img src=/img/icons/45px/pinterest.png>
+	    </a>
+
+	    <a  href="http://www.tumblr.com/share/link?url=%2fpost%2fspringmvc%2f"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Tumblr. Opens in a new window." >
+	        <img src=/img/icons/45px/tumblr.png>
+	    </a>
+
+		<a  href="https://www.linkedin.com/shareArticle?mini=true&url=%2fpost%2fspringmvc%2f
+			&title=SpringMVC&summary=00.Servlet%20%20%e6%99%ae%e9%80%9a%e7%9a%84Java%e7%a8%8b%e5%ba%8f%e5%be%88%e9%9a%be%e5%ae%8c%e6%88%90%e7%bd%91%e7%bb%9c%e8%81%8a%e5%a4%a9%e3%80%81%e5%8f%91%e5%b8%96%e3%80%81%e4%ba%a4%e4%ba%92%e8%bf%99%e6%a0%b7%e7%9a%84%e5%8a%9f%e8%83%bd%ef%bc%8cSun%e5%85%ac%e5%8f%b8%e6%8f%90%e4%be%9b%e4%ba%86Servlet%e8%bf%99%e7%a7%8d%e6%8a%80%e6%9c%af%e4%be%9b%e6%88%91%e4%bb%ac%e4%bd%bf%e7%94%a8%e3%80%82%0a%20JavaWeb%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84%20&source=rafed123.github.io"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on LinkedIn. Opens in a new window." >
+	        <img src=/img/icons/45px/linkedin.png>
+	    </a>
+
+	    <a  href="mailto:?subject=SpringMVC&amp;body=Check out this site %2fpost%2fspringmvc%2f"
+	        title="Share via Email. Opens in a new window." >
+	        <img src=/img/icons/45px/mail.png>
+	    </a>
+	</div>
+</div>
+
+
+<br>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    (function () {
+        
+        
+        if (window.location.hostname == "localhost")
+            return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = '';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+        </div>
+    </div>
+
+<footer class="footer has-background-dark">
+    <div class="content has-text-centered has-text-white">
+        <p>
+            © 2020 Ramium. Powered by
+            <a class="has-text-light" href="https://github.com/gohugoio/hugo" target="_blank">
+            Hugo</a>. Theme
+            <a class="has-text-light" href="https://github.com/rafed123/ramium/" target="_blank">
+                Ramium.
+            </a>
+        </p>
+    </div>
+</footer>
+</body>
+
+</html>

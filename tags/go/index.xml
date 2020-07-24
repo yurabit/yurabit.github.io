@@ -18,7 +18,10 @@
       
       <guid>/post/go_test/</guid>
       <description>Go语言单元测试的基本规则介绍 Go语言的单元测试较容易实现，Go语言为我们提供了单元测试的框架，主要有下面的几个规定
-//规则1 </description>
+ 规则1：单元测试代码的go文件必须以_test.go结尾，Go语言测试工具会鉴别这个符合规则的文件。
+ $ go test //备注， 目录下只有main.go和maintest.go的时候，会显示下面的提示 ？ _/Users/XXX/ut [no test files] //执行结果，现实没有测试文件被发现  规则2: 单元测试的函数名必须以Test开头，是可以导出的公开函数。注：函数名尽量以Test+待测试函数的方法名命名
+  规则3: 测试函数的签名必须接收一个testing.T类型的指针作为参数，并且该测试函数不能返回任何值
+ </description>
     </item>
     
   </channel>

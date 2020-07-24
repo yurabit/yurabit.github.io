@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Redis on 王源豫个人博客</title>
+    <link>/tags/redis/</link>
+    <description>Recent content in Redis on 王源豫个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Jul 2020 09:13:44 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Redis基础</title>
+      <link>/post/redis/</link>
+      <pubDate>Wed, 01 Jul 2020 09:13:44 +0800</pubDate>
+      
+      <guid>/post/redis/</guid>
+      <description>Redis 基础  Redis是由意大利人Salvatore Sanfilippo（网名Antirez）开发。名字是由&amp;quot;Remote Dictionary Service&amp;rdquo;（远程字典服务）。
+ 安装Redis  Docker  # 拉取Redis镜像 &amp;gt; docker pull redis # 运行Redis容器 &amp;gt; docker run --name myredis -d -p 6379:6379 redis # 执行容器中的 redis-cli, 可以直接使用命令行操作redis &amp;gt; docker exec -it myredis redis-cli  MacOS  &amp;gt; brew install redis  Ubuntu  &amp;gt; apt-get install redis  RedHat  &amp;gt; yum install redis 基本数据结构  Redis中最基本的数据结构有5种，分别是string、list、hash、set、zset。
+其中所有的结构都是Key-Value的形式存在的，以上的五种数据结构指的都是Value的值。其中Key均为字符串类型。
+   string
+字符串的具体结构留到以后来分析，其主要的操作如下
+# 键值对操作 &amp;gt; set name bb OK &amp;gt; get name &amp;#34;bb&amp;#34; &amp;gt; exists name (integer) 1 &amp;gt; del name (integer) 1 &amp;gt; get name (nil) # 批量键值对操作 &amp;gt; mset name1 bb name2 yy OK &amp;gt; mget name1 name2 1) &amp;#34;bb&amp;#34; 2) &amp;#34;yy&amp;#34; &amp;gt; mget name1 name2 name3 1) &amp;#34;bb&amp;#34; 2) &amp;#34;yy&amp;#34; 3) (nil) # 处理过期、以及set命令的扩展 &amp;gt; set name bb OK &amp;gt; expire name 5 (integer) 1 .</description>
+    </item>
+    
+  </channel>
+</rss>

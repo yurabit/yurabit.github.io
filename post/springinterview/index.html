@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en-us"><title>
+    SpringInterview | 
+    
+    王源豫个人博客</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<meta name="description" 
+      content="Spring常见面试题  谈谈对 Spring IoC 的理解？ 谈谈对 Spring DI 的理解？ BeanFactory 接口和 ApplicationContext 接口不同点是什么？ 请介绍你熟悉的 Spring 核心类，并说明有什么作用？ 介绍一下 Spring 的事务的了解？ 介绍一下 Spring 的事务实现方式？ 解释 AOP 模块 Spring 的通知类型有哪些，请简单介绍一下？ Spring 通知类型使用场景分别有哪些？ 请介绍一下你对 Spring Beans 的理解? Spring 有哪些优点? 在Spring中使用hibernate的方法步骤 Spring 和 Struts 的区别？ Spring 框架由那几部分组成？ 谈谈你对 BeanFactory的理解，BeanFactory 实现举例 谈谈对 Spring 中的 Web 模块的理解 BeanFactory 和 Application contexts 有什么区别？ 谈谈你对 Spring 依赖注入的理解？ 什么是 Bean 装配? 什么是 Bean 的自动装配？ 介绍一下自动装配有几种方式？ 什么是基于注解的容器配置? 简述 JdbcTemplate 类的作用 解释 AOP 解释 Aspect 切面 简述 Spring AOP 中的通知 Spring AOP 中的织入你怎样理解？ 请详细介绍一下 Spring MVC 的流程？ Spring 配置文件?
+                ">
+
+<link rel="canonical" href="/post/springinterview/" />
+
+<link rel="icon" type="image/png" href="/image/favicon.ico">
+
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/bulma.min.css">
+
+<meta property="og:title" content="SpringInterview" />
+<meta property="og:description" content="Spring常见面试题  谈谈对 Spring IoC 的理解？ 谈谈对 Spring DI 的理解？ BeanFactory 接口和 ApplicationContext 接口不同点是什么？ 请介绍你熟悉的 Spring 核心类，并说明有什么作用？ 介绍一下 Spring 的事务的了解？ 介绍一下 Spring 的事务实现方式？ 解释 AOP 模块 Spring 的通知类型有哪些，请简单介绍一下？ Spring 通知类型使用场景分别有哪些？ 请介绍一下你对 Spring Beans 的理解? Spring 有哪些优点? 在Spring中使用hibernate的方法步骤 Spring 和 Struts 的区别？ Spring 框架由那几部分组成？ 谈谈你对 BeanFactory的理解，BeanFactory 实现举例 谈谈对 Spring 中的 Web 模块的理解 BeanFactory 和 Application contexts 有什么区别？ 谈谈你对 Spring 依赖注入的理解？ 什么是 Bean 装配? 什么是 Bean 的自动装配？ 介绍一下自动装配有几种方式？ 什么是基于注解的容器配置? 简述 JdbcTemplate 类的作用 解释 AOP 解释 Aspect 切面 简述 Spring AOP 中的通知 Spring AOP 中的织入你怎样理解？ 请详细介绍一下 Spring MVC 的流程？ Spring 配置文件?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/springinterview/" />
+<meta property="article:published_time" content="2020-07-24T11:17:02+08:00" />
+<meta property="article:modified_time" content="2020-07-24T11:17:02+08:00" /><meta property="og:site_name" content="王源豫个人博客" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SpringInterview"/>
+<meta name="twitter:description" content="Spring常见面试题  谈谈对 Spring IoC 的理解？ 谈谈对 Spring DI 的理解？ BeanFactory 接口和 ApplicationContext 接口不同点是什么？ 请介绍你熟悉的 Spring 核心类，并说明有什么作用？ 介绍一下 Spring 的事务的了解？ 介绍一下 Spring 的事务实现方式？ 解释 AOP 模块 Spring 的通知类型有哪些，请简单介绍一下？ Spring 通知类型使用场景分别有哪些？ 请介绍一下你对 Spring Beans 的理解? Spring 有哪些优点? 在Spring中使用hibernate的方法步骤 Spring 和 Struts 的区别？ Spring 框架由那几部分组成？ 谈谈你对 BeanFactory的理解，BeanFactory 实现举例 谈谈对 Spring 中的 Web 模块的理解 BeanFactory 和 Application contexts 有什么区别？ 谈谈你对 Spring 依赖注入的理解？ 什么是 Bean 装配? 什么是 Bean 的自动装配？ 介绍一下自动装配有几种方式？ 什么是基于注解的容器配置? 简述 JdbcTemplate 类的作用 解释 AOP 解释 Aspect 切面 简述 Spring AOP 中的通知 Spring AOP 中的织入你怎样理解？ 请详细介绍一下 Spring MVC 的流程？ Spring 配置文件?"/>
+
+
+
+    
+
+
+<script src=/js/ramium.js></script>
+<link rel="stylesheet" href=/css/ramium.css>
+
+
+
+
+
+<body><nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href=/>
+      
+      <strong>王源豫个人博客 </strong>
+      
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+      data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      
+      
+      <a class="navbar-item" href="/about">AboutMe</a>
+      
+      
+      
+      <a class="navbar-item" href="/post">文章</a>
+      
+      
+      
+      <a class="navbar-item" href="/catalogue">目录</a>
+      
+      
+    </div>
+
+    <div class="navbar-end">
+      
+
+      
+    </div>
+  </div>
+</nav><div class="columns is-centered">
+        <div id="page-body" class="column is-7">
+
+<div class="content blog">
+    <h1 class="title">SpringInterview</h1>
+
+    <div id="infobar" class="level is-mobile">
+        <div class="level-left">
+            
+
+            <div class="level-item">
+                <p class="subtitle info">
+                    9 mins read
+                </p>
+            </div>
+        </div>
+        <div class="level-right is-hidden-touch">
+            <div class="tags">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="tags is-hidden-desktop">
+        
+    </div>
+
+    <div class="blog-text">
+        
+
+        <h2 id="spring常见面试题">Spring常见面试题</h2>
+<ol>
+<li>谈谈对 Spring IoC 的理解？</li>
+<li>谈谈对 Spring DI 的理解？</li>
+<li>BeanFactory 接口和 ApplicationContext 接口不同点是什么？</li>
+<li>请介绍你熟悉的 Spring 核心类，并说明有什么作用？</li>
+<li>介绍一下 Spring 的事务的了解？</li>
+<li>介绍一下 Spring 的事务实现方式？</li>
+<li>解释 AOP 模块</li>
+<li>Spring 的通知类型有哪些，请简单介绍一下？</li>
+<li>Spring 通知类型使用场景分别有哪些？</li>
+<li>请介绍一下你对 Spring Beans 的理解?</li>
+<li>Spring 有哪些优点?</li>
+<li>在Spring中使用hibernate的方法步骤</li>
+<li>Spring 和 Struts 的区别？</li>
+<li>Spring 框架由那几部分组成？</li>
+<li>谈谈你对 BeanFactory的理解，BeanFactory 实现举例</li>
+<li>谈谈对 Spring 中的 Web 模块的理解</li>
+<li>BeanFactory 和 Application contexts 有什么区别？</li>
+<li>谈谈你对 Spring 依赖注入的理解？</li>
+<li>什么是 Bean 装配?</li>
+<li>什么是 Bean 的自动装配？</li>
+<li>介绍一下自动装配有几种方式？</li>
+<li>什么是基于注解的容器配置?</li>
+<li>简述 JdbcTemplate 类的作用</li>
+<li>解释 AOP</li>
+<li>解释 Aspect 切面</li>
+<li>简述 Spring AOP 中的通知</li>
+<li>Spring AOP 中的织入你怎样理解？</li>
+<li>请详细介绍一下 Spring MVC 的流程？</li>
+<li>Spring 配置文件?</li>
+<li>@RequestMapping 注解用在类上面有什么作用</li>
+<li>怎么样把某个请求映射到特定的方法上面</li>
+<li>谈谈 Spring 对 DAO 的支持</li>
+<li>Spring 配置 Bean 实例化有哪些方式？</li>
+<li>Bean 注入属性有哪几种方式</li>
+<li>在 Spring 中如何实现时间处理？</li>
+<li>Spring 中如何更高效的使用 JDBC ？</li>
+<li>请介绍一下设计模式在 Spring 框架中的使用？</li>
+<li>讲讲 Spring 框架的优点有哪些？</li>
+<li>哪种依赖注入方式你建议使用，构造器注入，还是 Setter 方法注入？</li>
+<li>你怎样定义类的作用域?</li>
+<li>解释 Spring 支持的几种 Bean 的作用域</li>
+<li>在 Spring 中如何注入一个 Java 集合？</li>
+<li>你可以在 Spring 中注入一个 null 和一个空字符串吗？</li>
+<li>什么是基于 Java 的 Spring 注解配置? 给一些注解的例子</li>
+<li>你更倾向用那种事务管理类型？</li>
+<li>Bean 的调用方式有哪些？</li>
+<li>Spring MVC 里面拦截器是怎么写的</li>
+<li>当一个方法向 AJAX 返回特殊对象，譬如 Object、List 等，需要做什么处理?</li>
+<li>如何使用 Spring MVC 完成 JSON 操作</li>
+<li>Spring 如何整合 Hibernate</li>
+<li>Spring 如何整合 Struts2 ?</li>
+<li>开发中主要使用 Spring 的什么技术 ?</li>
+<li>介绍一下 Spring MVC 常用的一些注解</li>
+<li>Spring 框架的事务管理有哪些优点</li>
+<li>IoC 控制反转设计原理？</li>
+<li>Spring 的生命周期？</li>
+<li>Spring 如何处理线程并发问题？</li>
+<li>核心容器（应用上下文）模块的理解？</li>
+<li>为什么说 Spring 是一个容器？</li>
+<li>Spring 的优点？</li>
+<li>Spring 框架中的单例 Beans 是线程安全的么？</li>
+<li>Spring 框架中有哪些不同类型的事件？</li>
+<li>IoC 的优点是什么？</li>
+<li>解释 Spring 框架中 Bean 的生命周期</li>
+<li>什么是 Spring 的内部 Bean？</li>
+<li>自动装配有哪些局限性 ?</li>
+<li>Spring 框架的事务管理有哪些优点？</li>
+<li>在 Spring AOP 中，关注点和横切关注的区别是什么？</li>
+<li>说说 Spring AOP 的底层实现原理？</li>
+<li>如何给 Spring 容器提供配置元数据?</li>
+<li>哪些是重要的 Bean 生命周期方法？ 你能重载它们吗？</li>
+<li>讲下 Spring MVC 的执行流程</li>
+<li>Spring MVC 的控制器是不是单例模式,如果是,有什么问题,怎么解决？</li>
+<li>Spring 中循环注入的方式？</li>
+<li>Spring MVC 比较 Struts2</li>
+<li>IoC 控制反转设计原理？</li>
+<li>Spring 的生命周期？</li>
+<li>Spring 如何处理线程并发问题？</li>
+<li>核心容器（应用上下文）模块的理解？</li>
+<li>为什么说 Spring 是一个容器？</li>
+<li>Spring 的优点？</li>
+<li>Spring 框架中的单例 Beans 是线程安全的么？</li>
+<li>Spring 框架中有哪些不同类型的事件？</li>
+<li>IoC 的优点是什么？</li>
+<li>解释 Spring 框架中 Bean 的生命周期</li>
+<li>什么是 Spring 的内部 Bean？</li>
+<li>自动装配有哪些局限性 ?</li>
+<li>Spring 框架的事务管理有哪些优点？</li>
+<li>在 Spring AOP 中，关注点和横切关注的区别是什么？</li>
+<li>说说 Spring AOP 的底层实现原理？</li>
+<li>如何给 Spring 容器提供配置元数据?</li>
+<li>哪些是重要的 Bean 生命周期方法？ 你能重载它们吗？</li>
+<li>讲下 Spring MVC 的执行流程</li>
+<li>Spring MVC 的控制器是不是单例模式,如果是,有什么问题,怎么解决？</li>
+<li>Spring 中循环注入的方式？</li>
+<li>Spring MVC 比较 Struts2</li>
+<li>什么是 Spring Boot？</li>
+<li>Spring Boot 自动配置的原理？</li>
+<li>Spring Boot 读取配置文件的方式?</li>
+<li>什么是微服务架构？</li>
+<li>Ribbon 和 Feign 的区别？</li>
+<li>Spring Cloud 断路器的作用?</li>
+<li>为什么要用 Spring Boot？</li>
+<li>Spring Boot 的核心配置文件有哪几个？它们的区别是什么？</li>
+<li>Spring Boot 的配置文件有哪几种格式？它们有什么区别？</li>
+<li>Spring Boot 的核心注解是哪个？它主要由哪几个注解组成的？</li>
+<li>开启 Spring Boot 特性有哪几种方式？</li>
+<li>Spring Boot 需要独立的容器运行吗？</li>
+<li>运行 Spring Boot 有哪几种方式？</li>
+<li>你如何理解 Spring Boot 中的 Starters？</li>
+<li>如何在 Spring Boot 启动的时候运行一些特定的代码？</li>
+<li>Spring Boot 有哪几种读取配置的方式？</li>
+<li>Spring Boot 实现热部署有哪几种方式？</li>
+<li>Spring Boot 多套不同环境如何配置？</li>
+<li>Spring Boot 可以兼容老 Spring 项目吗，如何做？</li>
+<li>什么是 Spring Cloud？</li>
+<li>介绍一下 Spring Cloud 常用的组件？</li>
+<li>Spring Cloud 如何实现服务注册的？</li>
+<li>什么是负载均衡？有什么作用？</li>
+<li>什么是服务熔断？</li>
+<li>请介绍一下 Ribbon 的主要作用？</li>
+</ol>
+
+    </div>
+</div><div id="social-media-share" class="has-text-centered">
+	<p><i>Sharing is caring!</i></p>
+	<br>
+	
+	<div class="share-buttons">
+	    <a  href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2fspringinterview%2f"
+	        onclick="socialMediaPopUp(this.href, '', 500, 500); return false;"
+	        title="Share on Facebook. Opens in a new window.">
+	        <img src=/img/icons/45px/facebook.png>
+	    </a>
+
+	    <a  href="https://twitter.com/intent/tweet?text=SpringInterview&url=%2fpost%2fspringinterview%2f"
+	        onclick="socialMediaPopUp(this.href, '', 500, 500); return false;"
+	        title="Share on Twitter. Opens in a new window." >
+	        <img src=/img/icons/45px/twitter.png>
+	    </a>
+
+		<a  href="http://www.reddit.com/submit?url=%2fpost%2fspringinterview%2f"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Reddit. Opens in a new window." >
+	        <img src=/img/icons/45px/reddit.png>
+	    </a>
+
+	    <a  href="http://pinterest.com/pin/create/button/?url=%2fpost%2fspringinterview%2f"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Pinterest. Opens in a new window." >
+	        <img src=/img/icons/45px/pinterest.png>
+	    </a>
+
+	    <a  href="http://www.tumblr.com/share/link?url=%2fpost%2fspringinterview%2f"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Tumblr. Opens in a new window." >
+	        <img src=/img/icons/45px/tumblr.png>
+	    </a>
+
+		<a  href="https://www.linkedin.com/shareArticle?mini=true&url=%2fpost%2fspringinterview%2f
+			&title=SpringInterview&summary=Spring%e5%b8%b8%e8%a7%81%e9%9d%a2%e8%af%95%e9%a2%98%20%20%e8%b0%88%e8%b0%88%e5%af%b9%20Spring%20IoC%20%e7%9a%84%e7%90%86%e8%a7%a3%ef%bc%9f%20%e8%b0%88%e8%b0%88%e5%af%b9%20Spring%20DI%20%e7%9a%84%e7%90%86%e8%a7%a3%ef%bc%9f%20BeanFactory%20%e6%8e%a5%e5%8f%a3%e5%92%8c%20ApplicationContext%20%e6%8e%a5%e5%8f%a3%e4%b8%8d%e5%90%8c%e7%82%b9%e6%98%af%e4%bb%80%e4%b9%88%ef%bc%9f%20%e8%af%b7%e4%bb%8b%e7%bb%8d%e4%bd%a0%e7%86%9f%e6%82%89%e7%9a%84%20Spring%20%e6%a0%b8%e5%bf%83%e7%b1%bb%ef%bc%8c%e5%b9%b6%e8%af%b4%e6%98%8e%e6%9c%89%e4%bb%80%e4%b9%88%e4%bd%9c%e7%94%a8%ef%bc%9f%20%e4%bb%8b%e7%bb%8d%e4%b8%80%e4%b8%8b%20Spring%20%e7%9a%84%e4%ba%8b%e5%8a%a1%e7%9a%84%e4%ba%86%e8%a7%a3%ef%bc%9f%20%e4%bb%8b%e7%bb%8d%e4%b8%80%e4%b8%8b%20Spring%20%e7%9a%84%e4%ba%8b%e5%8a%a1%e5%ae%9e%e7%8e%b0%e6%96%b9%e5%bc%8f%ef%bc%9f%20%e8%a7%a3%e9%87%8a%20AOP%20%e6%a8%a1%e5%9d%97%20Spring%20%e7%9a%84%e9%80%9a%e7%9f%a5%e7%b1%bb%e5%9e%8b%e6%9c%89%e5%93%aa%e4%ba%9b%ef%bc%8c%e8%af%b7%e7%ae%80%e5%8d%95%e4%bb%8b%e7%bb%8d%e4%b8%80%e4%b8%8b%ef%bc%9f%20Spring%20%e9%80%9a%e7%9f%a5%e7%b1%bb%e5%9e%8b%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af%e5%88%86%e5%88%ab%e6%9c%89%e5%93%aa%e4%ba%9b%ef%bc%9f%20%e8%af%b7%e4%bb%8b%e7%bb%8d%e4%b8%80%e4%b8%8b%e4%bd%a0%e5%af%b9%20Spring%20Beans%20%e7%9a%84%e7%90%86%e8%a7%a3%3f%20Spring%20%e6%9c%89%e5%93%aa%e4%ba%9b%e4%bc%98%e7%82%b9%3f%20%e5%9c%a8Spring%e4%b8%ad%e4%bd%bf%e7%94%a8hibernate%e7%9a%84%e6%96%b9%e6%b3%95%e6%ad%a5%e9%aa%a4%20Spring%20%e5%92%8c%20Struts%20%e7%9a%84%e5%8c%ba%e5%88%ab%ef%bc%9f%20Spring%20%e6%a1%86%e6%9e%b6%e7%94%b1%e9%82%a3%e5%87%a0%e9%83%a8%e5%88%86%e7%bb%84%e6%88%90%ef%bc%9f%20%e8%b0%88%e8%b0%88%e4%bd%a0%e5%af%b9%20BeanFactory%e7%9a%84%e7%90%86%e8%a7%a3%ef%bc%8cBeanFactory%20%e5%ae%9e%e7%8e%b0%e4%b8%be%e4%be%8b%20%e8%b0%88%e8%b0%88%e5%af%b9%20Spring%20%e4%b8%ad%e7%9a%84%20Web%20%e6%a8%a1%e5%9d%97%e7%9a%84%e7%90%86%e8%a7%a3%20BeanFactory%20%e5%92%8c%20Application%20contexts%20%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab%ef%bc%9f%20%e8%b0%88%e8%b0%88%e4%bd%a0%e5%af%b9%20Spring%20%e4%be%9d%e8%b5%96%e6%b3%a8%e5%85%a5%e7%9a%84%e7%90%86%e8%a7%a3%ef%bc%9f%20%e4%bb%80%e4%b9%88%e6%98%af%20Bean%20%e8%a3%85%e9%85%8d%3f%20%e4%bb%80%e4%b9%88%e6%98%af%20Bean%20%e7%9a%84%e8%87%aa%e5%8a%a8%e8%a3%85%e9%85%8d%ef%bc%9f%20%e4%bb%8b%e7%bb%8d%e4%b8%80%e4%b8%8b%e8%87%aa%e5%8a%a8%e8%a3%85%e9%85%8d%e6%9c%89%e5%87%a0%e7%a7%8d%e6%96%b9%e5%bc%8f%ef%bc%9f%20%e4%bb%80%e4%b9%88%e6%98%af%e5%9f%ba%e4%ba%8e%e6%b3%a8%e8%a7%a3%e7%9a%84%e5%ae%b9%e5%99%a8%e9%85%8d%e7%bd%ae%3f%20%e7%ae%80%e8%bf%b0%20JdbcTemplate%20%e7%b1%bb%e7%9a%84%e4%bd%9c%e7%94%a8%20%e8%a7%a3%e9%87%8a%20AOP%20%e8%a7%a3%e9%87%8a%20Aspect%20%e5%88%87%e9%9d%a2%20%e7%ae%80%e8%bf%b0%20Spring%20AOP%20%e4%b8%ad%e7%9a%84%e9%80%9a%e7%9f%a5%20Spring%20AOP%20%e4%b8%ad%e7%9a%84%e7%bb%87%e5%85%a5%e4%bd%a0%e6%80%8e%e6%a0%b7%e7%90%86%e8%a7%a3%ef%bc%9f%20%e8%af%b7%e8%af%a6%e7%bb%86%e4%bb%8b%e7%bb%8d%e4%b8%80%e4%b8%8b%20Spring%20MVC%20%e7%9a%84%e6%b5%81%e7%a8%8b%ef%bc%9f%20Spring%20%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%3f&source=rafed123.github.io"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on LinkedIn. Opens in a new window." >
+	        <img src=/img/icons/45px/linkedin.png>
+	    </a>
+
+	    <a  href="mailto:?subject=SpringInterview&amp;body=Check out this site %2fpost%2fspringinterview%2f"
+	        title="Share via Email. Opens in a new window." >
+	        <img src=/img/icons/45px/mail.png>
+	    </a>
+	</div>
+</div>
+
+
+<br>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    (function () {
+        
+        
+        if (window.location.hostname == "localhost")
+            return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = '';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+        </div>
+    </div>
+
+<footer class="footer has-background-dark">
+    <div class="content has-text-centered has-text-white">
+        <p>
+            © 2020 Ramium. Powered by
+            <a class="has-text-light" href="https://github.com/gohugoio/hugo" target="_blank">
+            Hugo</a>. Theme
+            <a class="has-text-light" href="https://github.com/rafed123/ramium/" target="_blank">
+                Ramium.
+            </a>
+        </p>
+    </div>
+</footer>
+</body>
+
+</html>
