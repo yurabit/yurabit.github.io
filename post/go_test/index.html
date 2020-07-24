@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-us"><title>
+    Go语言的单元测试 | 
+    
+    王源豫个人博客</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<meta name="description" 
+      content="Go语言单元测试的基本规则介绍 Go语言的单元测试较容易实现，Go语言为我们提供了单元测试的框架，主要有下面的几个规定
+//规则1 
+                ">
+
+<link rel="canonical" href="/post/go_test/" />
+
+<link rel="icon" type="image/png" href="/image/favicon.ico">
+
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/bulma.min.css">
+
+<meta property="og:title" content="Go语言的单元测试" />
+<meta property="og:description" content="Go语言单元测试的基本规则介绍 Go语言的单元测试较容易实现，Go语言为我们提供了单元测试的框架，主要有下面的几个规定
+//规则1 " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/go_test/" />
+<meta property="article:published_time" content="2020-05-30T11:45:36+08:00" />
+<meta property="article:modified_time" content="2020-05-30T11:45:36+08:00" /><meta property="og:site_name" content="王源豫个人博客" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go语言的单元测试"/>
+<meta name="twitter:description" content="Go语言单元测试的基本规则介绍 Go语言的单元测试较容易实现，Go语言为我们提供了单元测试的框架，主要有下面的几个规定
+//规则1 "/>
+
+
+
+    
+
+
+<script src=/js/ramium.js></script>
+<link rel="stylesheet" href=/css/ramium.css>
+
+
+
+
+
+<body><nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href=/>
+      
+      <strong>王源豫个人博客 </strong>
+      
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+      data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      
+      
+      <a class="navbar-item" href="/about">AboutMe</a>
+      
+      
+      
+      <a class="navbar-item" href="/post">文章</a>
+      
+      
+      
+      <a class="navbar-item" href="/catalogue">目录</a>
+      
+      
+    </div>
+
+    <div class="navbar-end">
+      
+
+      
+    </div>
+  </div>
+</nav><div class="columns is-centered">
+        <div id="page-body" class="column is-7">
+
+<div class="content blog">
+    <h1 class="title">Go语言的单元测试</h1>
+
+    <div id="infobar" class="level is-mobile">
+        <div class="level-left">
+            
+
+            <div class="level-item">
+                <p class="subtitle info">
+                    1 min read
+                </p>
+            </div>
+        </div>
+        <div class="level-right is-hidden-touch">
+            <div class="tags">
+                
+                <a class="tag is-dark is-rounded" href="/tags/go">Go</a>
+                
+                <a class="tag is-dark is-rounded" href="/tags/%E6%8A%80%E6%9C%AF">技术</a>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="tags is-hidden-desktop">
+        
+        <a class="tag is-dark is-rounded" href="/tags/go">Go</a>
+        
+        <a class="tag is-dark is-rounded" href="/tags/%E6%8A%80%E6%9C%AF">技术</a>
+        
+    </div>
+
+    <div class="blog-text">
+        
+
+        <h2 id="go语言单元测试的基本规则介绍">Go语言单元测试的基本规则介绍</h2>
+<p>Go语言的单元测试较容易实现，Go语言为我们提供了单元测试的框架，主要有下面的几个规定</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">//规则1
+</span></code></pre></div>
+    </div>
+</div><div id="social-media-share" class="has-text-centered">
+	<p><i>Sharing is caring!</i></p>
+	<br>
+	
+	<div class="share-buttons">
+	    <a  href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2fgo_test%2f"
+	        onclick="socialMediaPopUp(this.href, '', 500, 500); return false;"
+	        title="Share on Facebook. Opens in a new window.">
+	        <img src=/img/icons/45px/facebook.png>
+	    </a>
+
+	    <a  href="https://twitter.com/intent/tweet?text=Go%e8%af%ad%e8%a8%80%e7%9a%84%e5%8d%95%e5%85%83%e6%b5%8b%e8%af%95&url=%2fpost%2fgo_test%2f"
+	        onclick="socialMediaPopUp(this.href, '', 500, 500); return false;"
+	        title="Share on Twitter. Opens in a new window." >
+	        <img src=/img/icons/45px/twitter.png>
+	    </a>
+
+		<a  href="http://www.reddit.com/submit?url=%2fpost%2fgo_test%2f"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Reddit. Opens in a new window." >
+	        <img src=/img/icons/45px/reddit.png>
+	    </a>
+
+	    <a  href="http://pinterest.com/pin/create/button/?url=%2fpost%2fgo_test%2f"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Pinterest. Opens in a new window." >
+	        <img src=/img/icons/45px/pinterest.png>
+	    </a>
+
+	    <a  href="http://www.tumblr.com/share/link?url=%2fpost%2fgo_test%2f"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Tumblr. Opens in a new window." >
+	        <img src=/img/icons/45px/tumblr.png>
+	    </a>
+
+		<a  href="https://www.linkedin.com/shareArticle?mini=true&url=%2fpost%2fgo_test%2f
+			&title=Go%e8%af%ad%e8%a8%80%e7%9a%84%e5%8d%95%e5%85%83%e6%b5%8b%e8%af%95&summary=Go%e8%af%ad%e8%a8%80%e5%8d%95%e5%85%83%e6%b5%8b%e8%af%95%e7%9a%84%e5%9f%ba%e6%9c%ac%e8%a7%84%e5%88%99%e4%bb%8b%e7%bb%8d%20Go%e8%af%ad%e8%a8%80%e7%9a%84%e5%8d%95%e5%85%83%e6%b5%8b%e8%af%95%e8%be%83%e5%ae%b9%e6%98%93%e5%ae%9e%e7%8e%b0%ef%bc%8cGo%e8%af%ad%e8%a8%80%e4%b8%ba%e6%88%91%e4%bb%ac%e6%8f%90%e4%be%9b%e4%ba%86%e5%8d%95%e5%85%83%e6%b5%8b%e8%af%95%e7%9a%84%e6%a1%86%e6%9e%b6%ef%bc%8c%e4%b8%bb%e8%a6%81%e6%9c%89%e4%b8%8b%e9%9d%a2%e7%9a%84%e5%87%a0%e4%b8%aa%e8%a7%84%e5%ae%9a%0a%2f%2f%e8%a7%84%e5%88%991%20&source=rafed123.github.io"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on LinkedIn. Opens in a new window." >
+	        <img src=/img/icons/45px/linkedin.png>
+	    </a>
+
+	    <a  href="mailto:?subject=Go%e8%af%ad%e8%a8%80%e7%9a%84%e5%8d%95%e5%85%83%e6%b5%8b%e8%af%95&amp;body=Check out this site %2fpost%2fgo_test%2f"
+	        title="Share via Email. Opens in a new window." >
+	        <img src=/img/icons/45px/mail.png>
+	    </a>
+	</div>
+</div>
+
+
+<br>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    (function () {
+        
+        
+        if (window.location.hostname == "localhost")
+            return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = '';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+        </div>
+    </div>
+
+<footer class="footer has-background-dark">
+    <div class="content has-text-centered has-text-white">
+        <p>
+            © 2020 Ramium. Powered by
+            <a class="has-text-light" href="https://github.com/gohugoio/hugo" target="_blank">
+            Hugo</a>. Theme
+            <a class="has-text-light" href="https://github.com/rafed123/ramium/" target="_blank">
+                Ramium.
+            </a>
+        </p>
+    </div>
+</footer>
+</body>
+
+</html>

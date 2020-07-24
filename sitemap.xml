@@ -3,8 +3,19 @@
       
       
 	  <url>
-	    <loc>/post/goarray/</loc>
-	    <lastmod>2020-05-16</lastmod>
+	    <loc>/tags/go/</loc>
+	    <lastmod>2020-05-30</lastmod>
+        
+
+        
+	  </url>
+	  
+  
+      
+      
+	  <url>
+	    <loc>/post/go_test/</loc>
+	    <lastmod>2020-05-30</lastmod>
         
 
         
@@ -15,7 +26,29 @@
       
 	  <url>
 	    <loc>/post/</loc>
-	    <lastmod>2020-05-16</lastmod>
+	    <lastmod>2020-05-30</lastmod>
+        
+
+        
+	  </url>
+	  
+  
+      
+      
+	  <url>
+	    <loc>/tags/</loc>
+	    <lastmod>2020-05-30</lastmod>
+        
+
+        
+	  </url>
+	  
+  
+      
+      
+	  <url>
+	    <loc>/tags/%E6%8A%80%E6%9C%AF/</loc>
+	    <lastmod>2020-05-30</lastmod>
         
 
         
@@ -26,6 +59,17 @@
       
 	  <url>
 	    <loc>/</loc>
+	    <lastmod>2020-05-30</lastmod>
+        
+
+        
+	  </url>
+	  
+  
+      
+      
+	  <url>
+	    <loc>/post/goarray/</loc>
 	    <lastmod>2020-05-16</lastmod>
         
 
@@ -92,28 +136,6 @@
       
 	  <url>
 	    <loc>/post/first/</loc>
-	    <lastmod>2020-03-22</lastmod>
-        
-
-        
-	  </url>
-	  
-  
-      
-      
-	  <url>
-	    <loc>/tags/</loc>
-	    <lastmod>2020-03-22</lastmod>
-        
-
-        
-	  </url>
-	  
-  
-      
-      
-	  <url>
-	    <loc>/tags/%E6%8A%80%E6%9C%AF/</loc>
 	    <lastmod>2020-03-22</lastmod>
         
 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on 王源豫个人博客</title>
+    <link>/tags/go/</link>
+    <description>Recent content in Go on 王源豫个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 30 May 2020 11:45:36 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go语言的单元测试</title>
+      <link>/post/go_test/</link>
+      <pubDate>Sat, 30 May 2020 11:45:36 +0800</pubDate>
+      
+      <guid>/post/go_test/</guid>
+      <description>Go语言单元测试的基本规则介绍 Go语言的单元测试较容易实现，Go语言为我们提供了单元测试的框架，主要有下面的几个规定
+//规则1 </description>
+    </item>
+    
+  </channel>
+</rss>
